@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1043914350877",
+    "project_id": "whosimpostor-7683a",
+    "storage_bucket": "whosimpostor-7683a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043914350877:android:add295ea546ab11acd01f4",
+        "android_client_info": {
+          "package_name": "com.example.who_is_liar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCXmmAvXhopk6TYVInG0cTigkQVrFIsrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
