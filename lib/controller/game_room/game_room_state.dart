@@ -1,4 +1,4 @@
-import 'package:who_is_liar/controller/game_room.dart';
+import 'package:who_is_liar/controller/game_room/game_room.dart';
 
 abstract class GameRoomState {
   const GameRoomState();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:who_is_liar/controller/game_room.dart';
+import 'package:who_is_liar/controller/game_room/game_room.dart';
 import 'package:who_is_liar/settings/styles.dart';
 
 class PlayersList extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:who_is_liar/controller/game_room.dart';
-import 'package:who_is_liar/controller/game_room_state.dart';
+import 'package:who_is_liar/controller/game_room/game_room.dart';
+import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/model/game_room_model.dart';
 import 'package:who_is_liar/model/name_model.dart';
 

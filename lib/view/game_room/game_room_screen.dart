@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:who_is_liar/controller/game_room_controller.dart';
-import 'package:who_is_liar/controller/game_room_state.dart';
+import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
+import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/settings/styles.dart';
-import 'package:who_is_liar/view/start/widgets/players_list.dart';
+import 'package:who_is_liar/view/game_room/widgets/players_list.dart';
 import 'package:who_is_liar/view/widgets/background.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
 
 import 'widgets/game_code_widget.dart';
 
-class StartScreen extends StatefulWidget {
-  const StartScreen({super.key});
+class GameRoomScreen extends StatefulWidget {
+  const GameRoomScreen({super.key});
 
   @override
-  State<StartScreen> createState() => _StartScreenState();
+  State<GameRoomScreen> createState() => _GameRoomScreenState();
 }
 
-class _StartScreenState extends State<StartScreen> {
+class _GameRoomScreenState extends State<GameRoomScreen> {
   late GameRoomController _gameRoomController;
   @override
   void dispose() {
