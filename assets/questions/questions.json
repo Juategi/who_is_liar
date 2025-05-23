@@ -1,0 +1,402 @@
+[
+  {
+    "QT":"¿Qué fruta te gusta más?",
+    "QF":"¿Qué verdura comes sin ganas?"
+  },
+  {
+    "QT":"¿Cuál es tu película favorita?",
+    "QF":"¿Cuál es la película que menos te gustó?"
+  },
+  {
+    "QT":"¿Qué animal te gustaría tener como mascota?",
+    "QF":"¿Qué animal jamás tendrías como mascota?"
+  },
+  {
+    "QT":"¿Qué comida pedirías en una primera cita?",
+    "QF":"¿Qué comida pedirías si tuvieras resaca?"
+  },
+  {
+    "QT":"¿Qué harías si ganaras la lotería?",
+    "QF":"¿Qué no harías ni con mucho dinero?"
+  },
+  {
+    "QT":"¿Cuál es tu serie favorita actualmente?",
+    "QF":"¿Cuál es la serie que no terminaste?"
+  },
+  {
+    "QT":"¿Qué superpoder te gustaría tener?",
+    "QF":"¿Qué superpoder te parece inútil?"
+  },
+  {
+    "QT":"¿Qué lugar del mundo te gustaría visitar?",
+    "QF":"¿Qué lugar no visitarías jamás?"
+  },
+  {
+    "QT":"¿Cuál es tu videojuego favorito?",
+    "QF":"¿Cuál es el videojuego más aburrido para ti?"
+  },
+  {
+    "QT":"¿Qué harías un día entero si no tuvieras responsabilidades?",
+    "QF":"¿Qué no harías ni por apuesta?"
+  },
+  {
+    "QT":"¿Cuál fue tu juguete favorito de niño?",
+    "QF":"¿Cuál fue el peor regalo que recibiste?"
+  },
+  {
+    "QT":"¿Qué canción podrías escuchar en bucle?",
+    "QF":"¿Qué canción odias sin razón?"
+  },
+  {
+    "QT":"¿Cuál es tu postre favorito?",
+    "QF":"¿Cuál es tu postre menos favorito?"
+  },
+  {
+    "QT":"¿Qué harías en una casa embrujada?",
+    "QF":"¿Qué harías si ves un fantasma?"
+  },
+  {
+    "QT":"¿Qué harías si fueras invisible por un día?",
+    "QF":"¿Qué harías si nadie te pudiera ver?"
+  },
+  {
+    "QT":"¿Cuál es tu red social favorita?",
+    "QF":"¿Qué red social te parece innecesaria?"
+  },
+  {
+    "QT":"¿Qué emoji usas más?",
+    "QF":"¿Qué emoji nunca usas?"
+  },
+  {
+    "QT":"¿Qué haces primero al levantarte?",
+    "QF":"¿Qué haces justo antes de dormir?"
+  },
+  {
+    "QT":"¿Cuál es tu sabor de helado favorito?",
+    "QF":"¿Cuál es el sabor de helado más raro que probaste?"
+  },
+  {
+    "QT":"¿Qué app usas más en tu móvil?",
+    "QF":"¿Qué app te parece inútil?"
+  },
+  {
+    "QT":"¿Cuál es tu actor o actriz favorito?",
+    "QF":"¿Qué actor o actriz no te gusta?"
+  },
+  {
+    "QT":"¿Qué deporte te gusta ver?",
+    "QF":"¿Qué deporte te aburre?"
+  },
+  {
+    "QT":"¿Qué animal te representa mejor?",
+    "QF":"¿Qué animal te da miedo?"
+  },
+  {
+    "QT":"¿Cuál fue tu peor castigo de niño?",
+    "QF":"¿Qué castigo recuerdas como injusto?"
+  },
+  {
+    "QT":"¿Qué harías si te encontraras una cartera llena de dinero?",
+    "QF":"¿Qué harías si encontraras algo ilegal?"
+  },
+  {
+    "QT":"¿Cuál fue el viaje más divertido que has hecho?",
+    "QF":"¿Cuál fue el viaje más aburrido que has hecho?"
+  },
+  {
+    "QT":"¿Qué harías si te toca cantar en karaoke?",
+    "QF":"¿Qué harías si te obligan a cantar en público?"
+  },
+  {
+    "QT":"¿Qué harías si te encuentras con un famoso?",
+    "QF":"¿Qué harías si te confunden con un famoso?"
+  },
+  {
+    "QT":"¿Qué color usarías para pintar tu habitación?",
+    "QF":"¿Qué color nunca usarías para tu casa?"
+  },
+  {
+    "QT":"¿Cuál es tu sabor de pizza favorito?",
+    "QF":"¿Qué ingrediente te arruina la pizza?"
+  },
+  {
+    "QT":"¿Cuál es tu festividad favorita?",
+    "QF":"¿Qué festividad no celebras nunca?"
+  },
+  {
+    "QT":"¿Qué te da más risa últimamente?",
+    "QF":"¿Qué chiste te parece muy malo?"
+  },
+  {
+    "QT":"¿Qué harías en tu día ideal?",
+    "QF":"¿Qué harías en tu peor día?"
+  },
+  {
+    "QT":"¿Qué personaje de ficción te gustaría ser?",
+    "QF":"¿Qué personaje te parece insoportable?"
+  },
+  {
+    "QT":"¿Qué haces cuando estás aburrido?",
+    "QF":"¿Qué haces cuando no tienes internet?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Cuál es tu película animada menos favorita?"
+  },
+  {
+    "QT":"¿Cuál es tu videojuego retro favorito?",
+    "QF":"¿Qué videojuego viejo te parecía difícil?"
+  },
+  {
+    "QT":"¿Qué harías si te despiertas siendo millonario?",
+    "QF":"¿Qué harías si pierdes todo tu dinero?"
+  },
+  {
+    "QT":"¿Qué olor te gusta más?",
+    "QF":"¿Qué olor te molesta mucho?"
+  },
+  {
+    "QT":"¿Qué harías en un apocalipsis zombie?",
+    "QF":"¿Qué harías si tus amigos desaparecen?"
+  },
+  {
+    "QT":"¿Qué comida no puede faltar en una fiesta?",
+    "QF":"¿Qué comida no entiendes por qué gusta?"
+  },
+  {
+    "QT":"¿Qué harías si fueras presidente por un día?",
+    "QF":"¿Qué decisión cambiarías de un presidente?"
+  },
+  {
+    "QT":"¿Qué instrumento musical te gustaría tocar?",
+    "QF":"¿Qué instrumento odias escuchar?"
+  },
+  {
+    "QT":"¿Qué harías en la luna?",
+    "QF":"¿Qué harías si no pudieras volver a la Tierra?"
+  },
+  {
+    "QT":"¿Qué harías si fueras un gato?",
+    "QF":"¿Qué harías si fueras un perro?"
+  },
+  {
+    "QT":"¿Qué tipo de clima te gusta más?",
+    "QF":"¿Qué tipo de clima te pone de mal humor?"
+  },
+  {
+    "QT":"¿Qué harías si pudieras viajar en el tiempo?",
+    "QF":"¿A qué época no querrías viajar?"
+  },
+  {
+    "QT":"¿Cuál es tu bebida favorita?",
+    "QF":"¿Qué bebida no tomarías nunca?"
+  },
+  {
+    "QT":"¿Qué harías si pudieras cambiar de cuerpo con alguien por un día?",
+    "QF":"¿Qué harías si nadie recordara quién eres?"
+  },
+  {
+    "QT":"¿Qué harías si pudieras viajar en el tiempo?",
+    "QF":"¿Qué harías si nadie te pudiera ver?"
+  },
+  {
+    "QT":"¿Qué harías si te despiertas siendo millonario?",
+    "QF":"¿Qué no harías ni por apuesta?"
+  },
+  {
+    "QT":"¿Qué harías un día entero si no tuvieras responsabilidades?",
+    "QF":"¿Qué app te parece inútil?"
+  },
+  {
+    "QT":"¿Qué olor te gusta más?",
+    "QF":"¿Qué harías si encontraras algo ilegal?"
+  },
+  {
+    "QT":"¿Qué harías si te despiertas siendo millonario?",
+    "QF":"¿Qué haces justo antes de dormir?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Qué canción odias sin razón?"
+  },
+  {
+    "QT":"¿Qué color usarías para pintar tu habitación?",
+    "QF":"¿Cuál fue el peor regalo que recibiste?"
+  },
+  {
+    "QT":"¿Qué emoji usas más?",
+    "QF":"¿Qué harías si te confunden con un famoso?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Qué harías si nadie recordara quién eres?"
+  },
+  {
+    "QT":"¿Qué te da más risa últimamente?",
+    "QF":"¿Qué harías si encontraras algo ilegal?"
+  },
+  {
+    "QT":"¿Qué te da más risa últimamente?",
+    "QF":"¿Qué lugar no visitarías jamás?"
+  },
+  {
+    "QT":"¿Qué instrumento musical te gustaría tocar?",
+    "QF":"¿Qué no harías ni por apuesta?"
+  },
+  {
+    "QT":"¿Cuál es tu festividad favorita?",
+    "QF":"¿Cuál es la serie que no terminaste?"
+  },
+  {
+    "QT":"¿Cuál es tu actor o actriz favorito?",
+    "QF":"¿Cuál es la serie que no terminaste?"
+  },
+  {
+    "QT":"¿Qué harías en la luna?",
+    "QF":"¿Qué tipo de clima te pone de mal humor?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Qué personaje te parece insoportable?"
+  },
+  {
+    "QT":"¿Qué te da más risa últimamente?",
+    "QF":"¿Cuál es la película que menos te gustó?"
+  },
+  {
+    "QT":"¿Qué deporte te gusta ver?",
+    "QF":"¿Qué personaje te parece insoportable?"
+  },
+  {
+    "QT":"¿Qué superpoder te gustaría tener?",
+    "QF":"¿Qué no harías ni por apuesta?"
+  },
+  {
+    "QT":"¿Cuál es tu red social favorita?",
+    "QF":"¿A qué época no querrías viajar?"
+  },
+  {
+    "QT":"¿Cuál es tu actor o actriz favorito?",
+    "QF":"¿Cuál fue el peor regalo que recibiste?"
+  },
+  {
+    "QT":"¿Qué harías en un apocalipsis zombie?",
+    "QF":"¿Qué harías si no pudieras volver a la Tierra?"
+  },
+  {
+    "QT":"¿Qué harías si te despiertas siendo millonario?",
+    "QF":"¿Qué harías si nadie recordara quién eres?"
+  },
+  {
+    "QT":"¿Qué superpoder te gustaría tener?",
+    "QF":"¿Qué no harías ni por apuesta?"
+  },
+  {
+    "QT":"¿Qué superpoder te gustaría tener?",
+    "QF":"¿Qué haces justo antes de dormir?"
+  },
+  {
+    "QT":"¿Cuál es tu actor o actriz favorito?",
+    "QF":"¿Cuál fue el peor regalo que recibiste?"
+  },
+  {
+    "QT":"¿Cuál fue tu peor castigo de niño?",
+    "QF":"¿Qué no harías ni por apuesta?"
+  },
+  {
+    "QT":"¿Qué te da más risa últimamente?",
+    "QF":"¿Qué harías si no pudieras volver a la Tierra?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Qué superpoder te parece inútil?"
+  },
+  {
+    "QT":"¿Qué harías un día entero si no tuvieras responsabilidades?",
+    "QF":"¿Qué haces cuando no tienes internet?"
+  },
+  {
+    "QT":"¿Qué harías si te encontraras una cartera llena de dinero?",
+    "QF":"¿Qué verdura comes sin ganas?"
+  },
+  {
+    "QT":"¿Cuál fue el viaje más divertido que has hecho?",
+    "QF":"¿Qué harías en tu peor día?"
+  },
+  {
+    "QT":"¿Qué deporte te gusta ver?",
+    "QF":"¿Cuál es la serie que no terminaste?"
+  },
+  {
+    "QT":"¿Qué harías si fueras un gato?",
+    "QF":"¿Qué harías si te confunden con un famoso?"
+  },
+  {
+    "QT":"¿Qué instrumento musical te gustaría tocar?",
+    "QF":"¿Qué canción odias sin razón?"
+  },
+  {
+    "QT":"¿Qué harías si te encuentras con un famoso?",
+    "QF":"¿Qué festividad no celebras nunca?"
+  },
+  {
+    "QT":"¿Qué harías si fueras invisible por un día?",
+    "QF":"¿A qué época no querrías viajar?"
+  },
+  {
+    "QT":"¿Qué superpoder te gustaría tener?",
+    "QF":"¿Qué superpoder te parece inútil?"
+  },
+  {
+    "QT":"¿Qué te da más risa últimamente?",
+    "QF":"¿Qué haces justo antes de dormir?"
+  },
+  {
+    "QT":"¿Cuál es tu actor o actriz favorito?",
+    "QF":"¿Qué harías si encontraras algo ilegal?"
+  },
+  {
+    "QT":"¿Qué olor te gusta más?",
+    "QF":"¿Qué tipo de clima te pone de mal humor?"
+  },
+  {
+    "QT":"¿Cuál es tu sabor de helado favorito?",
+    "QF":"¿Qué harías si ves un fantasma?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Qué app te parece inútil?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Cuál es la película que menos te gustó?"
+  },
+  {
+    "QT":"¿Qué olor te gusta más?",
+    "QF":"¿Qué bebida no tomarías nunca?"
+  },
+  {
+    "QT":"¿Qué personaje de ficción te gustaría ser?",
+    "QF":"¿Qué harías si te confunden con un famoso?"
+  },
+  {
+    "QT":"¿Qué harías si te despiertas siendo millonario?",
+    "QF":"¿Qué no harías ni por apuesta?"
+  },
+  {
+    "QT":"¿Cuál es tu película animada favorita?",
+    "QF":"¿Qué harías en tu peor día?"
+  },
+  {
+    "QT":"¿Cuál es tu sabor de pizza favorito?",
+    "QF":"¿Qué no harías ni con mucho dinero?"
+  },
+  {
+    "QT":"¿Qué harías si te despiertas siendo millonario?",
+    "QF":"¿Qué animal jamás tendrías como mascota?"
+  },
+  {
+    "QT":"¿Qué harías si te encontraras una cartera llena de dinero?",
+    "QF":"¿Cuál es la serie que no terminaste?"
+  }
+]

@@ -9,11 +9,6 @@ class NameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final NameModel nameController = GetIt.instance.get<NameModel>();
     String value = nameController.getName();
-    if (value.isEmpty) {
-      final name = 'Player${DateTime.now().millisecondsSinceEpoch % 10000}';
-      value = name;
-      nameController.setName(name);
-    }
     return CustomTextField(
       value: value,
       labelText: 'Enter your name',

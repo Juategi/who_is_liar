@@ -35,8 +35,7 @@ class GameRoomController extends Cubit<GameRoomState> {
       try {
         final gameRoom = GameRoom(
           code: code,
-          status: data!['status'] as bool,
-          createdAt: data['createdAt'] as int,
+          createdAt: data!['createdAt'] as int,
           players: data['players'] != null
               ? (data['players'] as Map).entries.map((e) {
                   return Player(

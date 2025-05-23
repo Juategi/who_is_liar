@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:who_is_liar/model/name_model.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
 import 'package:who_is_liar/view/widgets/name_widget.dart';
 
@@ -7,6 +9,7 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final NameModel nameController = GetIt.instance.get<NameModel>();
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -30,13 +33,29 @@ class MenuScreen extends StatelessWidget {
                       MenuButton(
                         text: 'Create Game',
                         onPressed: () {
-                          Navigator.pushNamed(context, '/start');
+                          if (nameController.getName().isNotEmpty) {
+                            Navigator.pushNamed(context, '/start');
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Please enter a name'),
+                              ),
+                            );
+                          }
                         },
                       ),
                       MenuButton(
                         text: 'Join Game',
                         onPressed: () {
-                          Navigator.pushNamed(context, '/join');
+                          if (nameController.getName().isNotEmpty) {
+                            Navigator.pushNamed(context, '/join');
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Please enter a name'),
+                              ),
+                            );
+                          }
                         },
                       ),
                     ],

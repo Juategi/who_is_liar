@@ -35,6 +35,17 @@ class JoinRoomScreen extends StatelessWidget {
             MenuButton(
               text: 'Join game',
               onPressed: () {
+                if (code.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Please enter a code'),
+                      behavior: SnackBarBehavior.floating,
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 100),
+                    ),
+                  );
+                  return;
+                }
                 Navigator.pushNamed(context, '/start', arguments: code);
               },
             ),

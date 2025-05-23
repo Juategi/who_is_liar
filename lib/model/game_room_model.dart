@@ -10,9 +10,8 @@ class GameRoomModel {
 
   Future<String> createRoom() async {
     final String code = _randomCode();
-    final String name = await nameModel.getName();
-    database.ref('nodes/$code').set({
-      'status': false,
+    final String name = nameModel.getName();
+    await database.ref('nodes/$code').set({
       'createdAt': DateTime.now().millisecondsSinceEpoch,
     });
     database.ref('nodes/$code/players/$name').set({
@@ -23,7 +22,7 @@ class GameRoomModel {
   }
 
   Future<void> joinRoom(String code) async {
-    final String name = await nameModel.getName();
+    final String name = nameModel.getName();
     database.ref('nodes/$code/players/$name').set({
       'name': name,
       'isHost': false,

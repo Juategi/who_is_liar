@@ -74,7 +74,8 @@ class _GameRoomScreenState extends State<GameRoomScreen> {
                           child: MenuButton(
                             text: 'Start game',
                             onPressed: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/game',
+                                  arguments: code);
                             },
                           ),
                         ),
