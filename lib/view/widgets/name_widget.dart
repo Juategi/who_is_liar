@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:who_is_liar/model/name_model.dart';
 import 'package:who_is_liar/settings/colors.dart';
 import 'package:who_is_liar/settings/styles.dart';
@@ -7,7 +8,7 @@ class NameWidget extends StatelessWidget {
   const NameWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    final NameModel nameController = NameModel();
+    final NameModel nameController = GetIt.instance.get<NameModel>();
     final TextEditingController textEditingController = TextEditingController();
     return FutureBuilder<String>(
       future: nameController.getName(),

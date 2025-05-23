@@ -1,37 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:who_is_liar/model/game_room_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:who_is_liar/controller/game_room_controller.dart';
+import 'package:who_is_liar/controller/game_room_state.dart';
 import 'package:who_is_liar/settings/styles.dart';
 import 'package:who_is_liar/view/widgets/background.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
 
-class StartScreen extends StatelessWidget {
+class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
 
   @override
+  State<StartScreen> createState() => _StartScreenState();
+}
+
+class _StartScreenState extends State<StartScreen> {
+  @override
+  void initState() {
+    // Load the game room when the screen is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<GameRoomController>(context).loadGameRoom();
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // Dispose of the GameRoomController when the screen is disposed
+    // This is important to prevent memory leaks
+    BlocProvider.of<GameRoomController>(context).dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final GameRoomModel gameRoom = GameRoomModel();
     return Scaffold(
       body: Background(
         children: [
-          FutureBuilder<String>(
-            future: Future.delayed(
-                const Duration(seconds: 1), () => gameRoom.createRoom()),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
+          BlocBuilder<GameRoomController, GameRoomState>(
+            builder: (context, state) {
+              if (state is GameRoomLoading) {
                 return const Center(
                   child: CircularProgressIndicator(
                     color: Colors.white,
                   ),
                 );
-              } else if (snapshot.hasError) {
+              } else if (state is GameRoomError) {
                 return Center(
                   child: Text(
-                    'Error: ${snapshot.error}',
+                    'Error: ${state.message}',
                     style: AppStyles.secondary.copyWith(fontSize: 18),
                   ),
                 );
               } else {
-                final String code = snapshot.data!;
+                final String code = (state as GameRoomLoaded).code;
                 return Align(
                   alignment: Alignment.center,
                   child: Padding(

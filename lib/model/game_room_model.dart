@@ -1,11 +1,12 @@
 import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:get_it/get_it.dart';
 import 'dart:math' as math;
 import 'package:who_is_liar/model/name_model.dart';
 
 class GameRoomModel {
   final database = FirebaseDatabase.instance;
-  final NameModel nameModel = NameModel();
+  final NameModel nameModel = GetIt.instance.get<NameModel>();
 
   Future<String> createRoom() async {
     final String code = _randomCode();
@@ -14,20 +15,16 @@ class GameRoomModel {
       'status': false,
       'createdAt': DateTime.now().millisecondsSinceEpoch,
     });
-    database.ref('nodes/$code/$name').set({
+    database.ref('nodes/$code/players/$name').set({
       'name': name,
+      'isReady': false,
+      'isHost': true,
     });
     return code;
   }
 
   Stream<DatabaseEvent> listenRoom(String code) {
     Stream<DatabaseEvent> stream = database.ref('nodes/$code').onValue;
-    /*
-    stream.listen((DatabaseEvent event) {
-      final data = event.snapshot.value;
-      print("Datos actualizados: $data");
-    });
-    */
     return stream;
   }
 
