@@ -29,7 +29,6 @@ class GameRoomController extends Cubit<GameRoomState> {
                 return Player(
                   name: e.value['name'],
                   isHost: e.value['isHost'] as bool,
-                  isReady: e.value['isReady'] as bool,
                 );
               }).toList()
             : [],

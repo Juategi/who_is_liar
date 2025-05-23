@@ -17,7 +17,6 @@ class GameRoomModel {
     });
     database.ref('nodes/$code/players/$name').set({
       'name': name,
-      'isReady': false,
       'isHost': true,
     });
     return code;
