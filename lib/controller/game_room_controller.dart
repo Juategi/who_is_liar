@@ -4,11 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room.dart';
 import 'package:who_is_liar/controller/game_room_state.dart';
 import 'package:who_is_liar/model/game_room_model.dart';
+import 'package:who_is_liar/model/name_model.dart';
 
 class GameRoomController extends Cubit<GameRoomState> {
-  GameRoomController(this.gameRoomModel) : super(GameRoomLoading());
+  GameRoomController(this.gameRoomModel, this.nameModel)
+      : super(GameRoomLoading());
 
   final GameRoomModel gameRoomModel;
+  final NameModel nameModel;
   StreamSubscription<DatabaseEvent>? _subscription;
 
   Future<void> createRoom() async {
@@ -38,6 +41,7 @@ class GameRoomController extends Cubit<GameRoomState> {
               ? (data['players'] as Map).entries.map((e) {
                   return Player(
                     name: e.value['name'],
+                    isHost: e.value['isHost'] as bool? ?? false,
                   );
                 }).toList()
               : [],
@@ -48,6 +52,16 @@ class GameRoomController extends Cubit<GameRoomState> {
         return;
       }
     });
+  }
+
+  bool isHost() {
+    final state = this.state;
+    if (state is GameRoomLoaded) {
+      return state.gameRoom!.players
+          .firstWhere((player) => player.name == nameModel.getName())
+          .isHost;
+    }
+    return false;
   }
 
   void dispose() {

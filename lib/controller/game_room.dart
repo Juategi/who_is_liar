@@ -14,19 +14,22 @@ class GameRoom {
 
 class Player {
   String name;
+  bool isHost;
 
   Player({
     required this.name,
+    this.isHost = false,
   });
 
   factory Player.fromJson(Map<String, dynamic> json) {
     return Player(
       name: json['name'] as String,
+      isHost: json['isHost'] as bool? ?? false,
     );
   }
 
   @override
   String toString() {
-    return 'Player{name: $name}';
+    return 'Player{name: $name, isHost: $isHost}';
   }
 }

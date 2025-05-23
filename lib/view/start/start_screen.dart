@@ -69,11 +69,14 @@ class _StartScreenState extends State<StartScreen> {
                         const SizedBox(height: 20),
                         PlayersList(gameRoom: state.gameRoom),
                         const Spacer(),
-                        MenuButton(
-                          text: 'Start game',
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/');
-                          },
+                        Visibility(
+                          visible: _gameRoomController.isHost(),
+                          child: MenuButton(
+                            text: 'Start game',
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/');
+                            },
+                          ),
                         ),
                       ],
                     ),

@@ -6,6 +6,6 @@ import 'package:who_is_liar/settings/di.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  Di.setup();
+  await Di.setup();
   runApp(const MyApp());
 }

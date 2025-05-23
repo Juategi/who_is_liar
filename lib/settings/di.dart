@@ -4,11 +4,13 @@ import 'package:who_is_liar/model/game_room_model.dart';
 import 'package:who_is_liar/model/name_model.dart';
 
 class Di {
-  static void setup() {
+  static Future<void> setup() async {
     final getIt = GetIt.instance;
-    getIt.registerSingleton<NameModel>(NameModel());
+    final nameModel = NameModel();
+    await nameModel.init();
+    getIt.registerSingleton<NameModel>(nameModel);
     getIt.registerSingleton<GameRoomModel>(GameRoomModel());
     getIt.registerSingleton<GameRoomController>(
-        GameRoomController(getIt<GameRoomModel>()));
+        GameRoomController(getIt<GameRoomModel>(), getIt<NameModel>()));
   }
 }
