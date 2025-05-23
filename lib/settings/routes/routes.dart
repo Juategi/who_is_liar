@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:who_is_liar/view/join/join_room_screen.dart';
 import 'package:who_is_liar/view/menu/menu_screen.dart';
 import 'package:who_is_liar/view/start/start_screen.dart';
 
@@ -7,7 +8,7 @@ class AppRoutes {
     return {
       '/': (context) => const MenuScreen(),
       '/start': (context) => const StartScreen(),
-      // '/settings': (context) => const SettingsScreen(),
+      '/join': (context) => const JoinRoomScreen(),
     };
   }
 }

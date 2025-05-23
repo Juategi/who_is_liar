@@ -36,7 +36,7 @@ class MenuScreen extends StatelessWidget {
                       MenuButton(
                         text: 'Join Game',
                         onPressed: () {
-                          //Navigator.pushNamed(context, '/startGame');
+                          Navigator.pushNamed(context, '/join');
                         },
                       ),
                     ],

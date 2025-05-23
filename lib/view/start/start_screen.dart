@@ -17,25 +17,27 @@ class StartScreen extends StatefulWidget {
 }
 
 class _StartScreenState extends State<StartScreen> {
-  @override
-  void initState() {
-    // Load the game room when the screen is built
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      BlocProvider.of<GameRoomController>(context).loadGameRoom();
-    });
-    super.initState();
-  }
-
+  late GameRoomController _gameRoomController;
   @override
   void dispose() {
     // Dispose of the GameRoomController when the screen is disposed
     // This is important to prevent memory leaks
-    BlocProvider.of<GameRoomController>(context).dispose();
+    _gameRoomController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)?.settings.arguments;
+    _gameRoomController =
+        BlocProvider.of<GameRoomController>(context, listen: false);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (args != null) {
+        BlocProvider.of<GameRoomController>(context).joinRoom(args as String);
+      } else {
+        BlocProvider.of<GameRoomController>(context).createRoom();
+      }
+    });
     return Scaffold(
       body: Background(
         children: [

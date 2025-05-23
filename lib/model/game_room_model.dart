@@ -22,6 +22,14 @@ class GameRoomModel {
     return code;
   }
 
+  Future<void> joinRoom(String code) async {
+    final String name = await nameModel.getName();
+    database.ref('nodes/$code/players/$name').set({
+      'name': name,
+      'isHost': false,
+    });
+  }
+
   Stream<DatabaseEvent> listenRoom(String code) {
     Stream<DatabaseEvent> stream = database.ref('nodes/$code').onValue;
     return stream;

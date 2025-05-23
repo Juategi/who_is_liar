@@ -11,29 +11,42 @@ class GameRoomController extends Cubit<GameRoomState> {
   final GameRoomModel gameRoomModel;
   StreamSubscription<DatabaseEvent>? _subscription;
 
-  Future<void> loadGameRoom() async {
+  Future<void> createRoom() async {
     final String code = await gameRoomModel.createRoom();
-    final Stream<DatabaseEvent> playersStream = gameRoomModel.listenRoom(code);
-    _subscription = playersStream.listen((DatabaseEvent event) {
+    _listenRoom(code);
+  }
+
+  Future<void> joinRoom(String code) async {
+    try {
+      await gameRoomModel.joinRoom(code);
+      _listenRoom(code);
+    } catch (e) {
+      emit(GameRoomError(message: 'Failed to join room: $e'));
+    }
+  }
+
+  void _listenRoom(String code) {
+    _subscription =
+        gameRoomModel.listenRoom(code).listen((DatabaseEvent event) {
       final data = event.snapshot.value as Map?;
-      if (data == null) {
-        emit(GameRoomError(message: 'No data found'));
+      try {
+        final gameRoom = GameRoom(
+          code: code,
+          status: data!['status'] as bool,
+          createdAt: data['createdAt'] as int,
+          players: data['players'] != null
+              ? (data['players'] as Map).entries.map((e) {
+                  return Player(
+                    name: e.value['name'],
+                  );
+                }).toList()
+              : [],
+        );
+        emit(GameRoomLoaded(code: code, gameRoom: gameRoom));
+      } catch (e) {
+        emit(GameRoomError(message: 'No data room found'));
         return;
       }
-      final gameRoom = GameRoom(
-        code: code,
-        status: data['status'] as bool,
-        createdAt: data['createdAt'] as int,
-        players: data['players'] != null
-            ? (data['players'] as Map).entries.map((e) {
-                return Player(
-                  name: e.value['name'],
-                  isHost: e.value['isHost'] as bool,
-                );
-              }).toList()
-            : [],
-      );
-      emit(GameRoomLoaded(code: code, gameRoom: gameRoom));
     });
   }
 

@@ -5,6 +5,12 @@ import 'package:who_is_liar/settings/styles.dart';
 class PlayersList extends StatelessWidget {
   const PlayersList({super.key, required this.gameRoom});
   final GameRoom? gameRoom;
+
+  Color _randomColor() {
+    List<Color> colors = [...Colors.primaries];
+    return (colors..shuffle()).first;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,10 +28,10 @@ class PlayersList extends StatelessWidget {
             itemBuilder: (context, index) {
               final player = gameRoom!.players[index];
               return Text(
-                "${player.name} ${player.isHost ? '(You)' : ''}",
+                player.name,
                 style: AppStyles.secondary.copyWith(
                   fontSize: 25,
-                  color: player.isHost ? Colors.yellow : Colors.green,
+                  color: _randomColor(),
                 ),
               );
             },
