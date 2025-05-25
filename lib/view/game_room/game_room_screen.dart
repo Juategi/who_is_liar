@@ -3,11 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
 import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/settings/styles.dart';
-import 'package:who_is_liar/view/game_room/widgets/players_list.dart';
+import 'package:who_is_liar/view/game_room/screens/question_game_screen.dart';
+import 'package:who_is_liar/view/game_room/screens/waiting_room_screen.dart';
 import 'package:who_is_liar/view/widgets/background.dart';
-import 'package:who_is_liar/view/widgets/menu_button.dart';
-
-import 'widgets/game_code_widget.dart';
 
 class GameRoomScreen extends StatefulWidget {
   const GameRoomScreen({super.key});
@@ -38,6 +36,7 @@ class _GameRoomScreenState extends State<GameRoomScreen> {
         BlocProvider.of<GameRoomController>(context).createRoom();
       }
     });
+    _gameRoomController.context = context; // Set the context for the controller
     return Scaffold(
       body: Background(
         children: [
@@ -56,34 +55,21 @@ class _GameRoomScreenState extends State<GameRoomScreen> {
                     style: AppStyles.secondary.copyWith(fontSize: 18),
                   ),
                 );
-              } else {
-                final String code = (state as GameRoomLoaded).code;
-                return Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.all(32),
-                    child: Column(
-                      spacing: 16,
-                      children: [
-                        GameCodeWidget(code: code),
-                        const SizedBox(height: 20),
-                        PlayersList(gameRoom: state.gameRoom),
-                        const Spacer(),
-                        Visibility(
-                          visible: _gameRoomController.isHost(),
-                          child: MenuButton(
-                            text: 'Start game',
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/game',
-                                  arguments: code);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+              } else if (state is WaitingRoomLoaded) {
+                final String code = state.code;
+                return WaitingRoomScreen(
+                  code: code,
+                  gameRoom: state.gameRoom,
                 );
+              } else if (state is QuestionGameLoaded) {
+                return QuestionGameScreen();
               }
+              return Center(
+                child: Text(
+                  'Unexpected state',
+                  style: AppStyles.secondary.copyWith(fontSize: 18),
+                ),
+              );
             },
           ),
         ],

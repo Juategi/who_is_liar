@@ -6,17 +6,26 @@ abstract class GameRoomState {
 
 class GameRoomLoading extends GameRoomState {}
 
-class GameRoomLoaded extends GameRoomState {
+class GameRoomError extends GameRoomState {
+  final String message;
+
+  const GameRoomError({required this.message});
+}
+
+class WaitingRoomLoaded extends GameRoomState {
   final String code;
   final GameRoom? gameRoom;
-  const GameRoomLoaded({
+  const WaitingRoomLoaded({
     required this.code,
     required this.gameRoom,
   });
 }
 
-class GameRoomError extends GameRoomState {
-  final String message;
-
-  const GameRoomError({required this.message});
+class QuestionGameLoaded extends GameRoomState {
+  final String code;
+  final GameRoom? gameRoom;
+  const QuestionGameLoaded({
+    required this.code,
+    required this.gameRoom,
+  });
 }
