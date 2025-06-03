@@ -4,15 +4,20 @@ import 'package:who_is_liar/settings/styles.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {super.key, required this.value, this.onChanged, this.labelText = ''});
+      {super.key,
+      required this.value,
+      this.onChanged,
+      this.labelText = '',
+      this.height = 75});
   final String value;
   final String labelText;
   final Function(String)? onChanged;
+  final double height;
   @override
   Widget build(BuildContext context) {
     final TextEditingController textEditingController = TextEditingController();
     return Container(
-      height: 75,
+      height: height,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),

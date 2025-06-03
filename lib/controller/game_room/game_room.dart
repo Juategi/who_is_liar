@@ -39,11 +39,13 @@ class Player {
   String name;
   bool isHost;
   bool isReady = false;
+  String id;
   String? answer;
   String? vote;
 
   Player({
     required this.name,
+    required this.id,
     this.isHost = false,
     this.isReady = false,
     this.answer,

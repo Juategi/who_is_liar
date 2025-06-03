@@ -12,20 +12,24 @@ class GameRoomError extends GameRoomState {
   const GameRoomError({required this.message});
 }
 
-class WaitingRoomLoaded extends GameRoomState {
+abstract class RoomLoaded extends GameRoomState {
   final String code;
   final GameRoom? gameRoom;
-  const WaitingRoomLoaded({
+
+  const RoomLoaded({
     required this.code,
     required this.gameRoom,
   });
 }
 
-class QuestionGameLoaded extends GameRoomState {
-  final String code;
-  final GameRoom? gameRoom;
-  const QuestionGameLoaded({
-    required this.code,
-    required this.gameRoom,
-  });
+class WaitingRoomLoaded extends RoomLoaded {
+  WaitingRoomLoaded({required super.code, required super.gameRoom});
+}
+
+class QuestionGameLoaded extends RoomLoaded {
+  QuestionGameLoaded({required super.code, required super.gameRoom});
+}
+
+class QuestionGameAnswerSent extends RoomLoaded {
+  QuestionGameAnswerSent({required super.code, required super.gameRoom});
 }

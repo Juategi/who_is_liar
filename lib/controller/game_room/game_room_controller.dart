@@ -49,19 +49,28 @@ class GameRoomController extends Cubit<GameRoomState> {
           players: data['players'] != null
               ? (data['players'] as Map).entries.map((e) {
                   return Player(
+                    id: e.value['id'] as String,
                     name: e.value['name'],
                     isHost: e.value['isHost'] as bool? ?? false,
+                    answer: e.value['answer'] as String?,
                   );
                 }).toList()
               : [],
         );
         if (gameRoom.currentQuestion != null) {
-          emit(
-            QuestionGameLoaded(
-              code: code,
-              gameRoom: gameRoom,
-            ),
-          );
+          String? checkAnswer = gameRoom.players
+              .firstWhere((player) => player.id == nameModel.getId())
+              .answer;
+          if (checkAnswer != null && checkAnswer.isNotEmpty) {
+            emit(
+              QuestionGameAnswerSent(
+                code: code,
+                gameRoom: gameRoom,
+              ),
+            );
+          } else {
+            emit(QuestionGameLoaded(code: code, gameRoom: gameRoom));
+          }
         } else {
           emit(WaitingRoomLoaded(code: code, gameRoom: gameRoom));
         }
@@ -76,7 +85,7 @@ class GameRoomController extends Cubit<GameRoomState> {
     final state = this.state;
     if (state is WaitingRoomLoaded) {
       return state.gameRoom!.players
-          .firstWhere((player) => player.name == nameModel.getName())
+          .firstWhere((player) => player.id == nameModel.getId())
           .isHost;
     }
     return false;
@@ -87,6 +96,14 @@ class GameRoomController extends Cubit<GameRoomState> {
       await gameRoomModel.loadNextQuestion(code);
     } catch (e) {
       emit(GameRoomError(message: 'Failed to start game: $e'));
+    }
+  }
+
+  Future<void> sendAnswer(String code, String answer) async {
+    try {
+      await gameRoomModel.sendAnswer(code, answer);
+    } catch (e) {
+      emit(GameRoomError(message: 'Failed to send answer: $e'));
     }
   }
 

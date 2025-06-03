@@ -4,44 +4,35 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:who_is_liar/controller/game_room/game_room.dart';
-import 'dart:math' as math;
 import 'package:who_is_liar/model/name_model.dart';
+import 'package:who_is_liar/utils/code_utils.dart';
+import 'dart:math' as math;
 
 class GameRoomModel {
   final database = FirebaseDatabase.instance;
   final NameModel nameModel = GetIt.instance.get<NameModel>();
 
   Future<String> createRoom() async {
-    final String code = _randomCode();
-    final String name = nameModel.getName();
+    final String code = CodeUtils.generateRandomId(5);
+    final String id = nameModel.getId();
     await database.ref('nodes/$code').set({
       'createdAt': DateTime.now().millisecondsSinceEpoch,
     });
-    database.ref('nodes/$code/players/$name').set({
-      'name': name,
+    database.ref('nodes/$code/players/$id').set({
+      'name': nameModel.getName(),
       'isHost': true,
-      'id': _generateRandomId(),
+      'id': id,
     });
     return code;
   }
 
   Future<void> joinRoom(String code) async {
-    final String name = nameModel.getName();
-    database.ref('nodes/$code/players/$name').set({
-      'name': name,
+    final String id = nameModel.getId();
+    database.ref('nodes/$code/players/$id').set({
+      'name': nameModel.getName(),
       'isHost': false,
-      'id': _generateRandomId(),
+      'id': id,
     });
-  }
-
-  String _generateRandomId() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    final random = StringBuffer();
-    for (int i = 0; i < 10; i++) {
-      random.write(
-          characters[(characters.length * math.Random().nextDouble()).floor()]);
-    }
-    return random.toString();
   }
 
   Stream<DatabaseEvent> listenRoom(String code) {
@@ -95,13 +86,11 @@ class GameRoomModel {
     });
   }
 
-  String _randomCode() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    final random = StringBuffer();
-    for (int i = 0; i < 5; i++) {
-      random.write(
-          characters[(characters.length * math.Random().nextDouble()).floor()]);
-    }
-    return random.toString();
+  Future<void> sendAnswer(String code, String answer) async {
+    final DatabaseReference answerRef =
+        database.ref('nodes/$code/players/${nameModel.getId()}');
+    await answerRef.update({
+      'answer': answer,
+    });
   }
 }
