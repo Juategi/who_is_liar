@@ -20,6 +20,7 @@ class GameRoomModel {
     database.ref('nodes/$code/players/$name').set({
       'name': name,
       'isHost': true,
+      'id': _generateRandomId(),
     });
     return code;
   }
@@ -29,7 +30,18 @@ class GameRoomModel {
     database.ref('nodes/$code/players/$name').set({
       'name': name,
       'isHost': false,
+      'id': _generateRandomId(),
     });
+  }
+
+  String _generateRandomId() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    final random = StringBuffer();
+    for (int i = 0; i < 10; i++) {
+      random.write(
+          characters[(characters.length * math.Random().nextDouble()).floor()]);
+    }
+    return random.toString();
   }
 
   Stream<DatabaseEvent> listenRoom(String code) {
@@ -64,6 +76,11 @@ class GameRoomModel {
       questionsAnswered.clear();
     }
 
+    // Pick a random impostor from players
+    final players = (gameRoom?['players'] as Map?)?.values.toList() ?? [];
+    final impostorIndex = math.Random().nextInt(players.length);
+    final impostor = players[impostorIndex]['id'];
+
     // Update the database with the new current question and answered questions
     final Question nextQuestion = questions[randomIndex];
     questionsAnswered.add(randomIndex);
@@ -74,6 +91,7 @@ class GameRoomModel {
         'qf': nextQuestion.qf,
       },
       'questionsAnswered': questionsAnswered,
+      'impostor': impostor,
     });
   }
 

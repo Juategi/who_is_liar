@@ -4,6 +4,7 @@ class GameRoom {
   Question? currentQuestion;
   List<Player> players = [];
   List<Question> questionsAnswered = [];
+  String? impostor;
 
   GameRoom({
     required this.createdAt,
@@ -11,6 +12,7 @@ class GameRoom {
     required this.players,
     this.currentQuestion,
     this.questionsAnswered = const [],
+    required this.impostor,
   });
 
   GameRoom copyWith({
@@ -19,6 +21,7 @@ class GameRoom {
     Question? currentQuestion,
     List<Player>? players,
     List<Question>? questionsAnswered,
+    String? impostor,
   }) {
     return GameRoom(
       createdAt: createdAt ?? this.createdAt,
@@ -27,6 +30,7 @@ class GameRoom {
       players: players ?? List<Player>.from(this.players),
       questionsAnswered:
           questionsAnswered ?? List<Question>.from(this.questionsAnswered),
+      impostor: impostor ?? this.impostor,
     );
   }
 }

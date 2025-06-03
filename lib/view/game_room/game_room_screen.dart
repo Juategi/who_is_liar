@@ -62,7 +62,9 @@ class _GameRoomScreenState extends State<GameRoomScreen> {
                   gameRoom: state.gameRoom,
                 );
               } else if (state is QuestionGameLoaded) {
-                return QuestionGameScreen();
+                return QuestionGameScreen(
+                  state: state,
+                );
               }
               return Center(
                 child: Text(

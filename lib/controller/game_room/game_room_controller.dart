@@ -38,6 +38,7 @@ class GameRoomController extends Cubit<GameRoomState> {
         final gameRoom = GameRoom(
           code: code,
           createdAt: data!['createdAt'] as int,
+          impostor: data['impostor'] as String?,
           currentQuestion: data['currentQuestion'] != null
               ? Question(
                   id: data['currentQuestion']['id'],
