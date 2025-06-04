@@ -78,8 +78,8 @@ class GameRoomModel {
     await questionRef.update({
       'currentQuestion': {
         'id': nextQuestion.id,
-        'qt': nextQuestion.qt,
-        'qf': nextQuestion.qf,
+        'originalQuestion': nextQuestion.originalQuestion,
+        'impostorQuestion': nextQuestion.impostorQuestion,
       },
       'questionsAnswered': questionsAnswered,
       'impostor': impostor,
@@ -92,5 +92,29 @@ class GameRoomModel {
     await answerRef.update({
       'answer': answer,
     });
+  }
+
+  Future<void> showAnswers(
+    String code,
+  ) async {
+    final DatabaseReference questionRef = database.ref('nodes/$code');
+    await questionRef.update({
+      'show': true,
+    });
+  }
+
+  Future<void> leaveGame(String code) async {
+    final String id = nameModel.getId();
+    await database.ref('nodes/$code/players/$id').remove();
+    if (await _isLastPlayer(code)) {
+      await database.ref('nodes/$code').remove();
+    }
+  }
+
+  Future<bool> _isLastPlayer(String code) async {
+    final DatabaseReference playersRef = database.ref('nodes/$code/players');
+    final DatabaseEvent event = await playersRef.once();
+    final players = event.snapshot.value as Map?;
+    return players == null || players.isEmpty;
   }
 }

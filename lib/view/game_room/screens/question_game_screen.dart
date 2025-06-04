@@ -13,22 +13,37 @@ class QuestionGameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextEditingController answer = TextEditingController();
+    final GameRoomController gameRoomController =
+        BlocProvider.of<GameRoomController>(context);
     return Padding(
       padding: const EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            state.gameRoom?.currentQuestion?.qt ?? "No question available",
+            (gameRoomController.isImpostor()
+                    ? state.gameRoom?.currentQuestion?.impostorQuestion
+                    : state.gameRoom?.currentQuestion?.originalQuestion) ??
+                "No question available",
             style: AppStyles.secondary.copyWith(fontSize: 38),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
           Visibility(
             visible: (state is QuestionGameLoaded),
-            replacement: Text(
-              'Answer sent successfully!',
-              style: AppStyles.secondary.copyWith(fontSize: 24),
+            replacement: Column(
+              children: [
+                Text(
+                  'Answer sent successfully!',
+                  style: AppStyles.secondary.copyWith(fontSize: 20),
+                ),
+                const SizedBox(height: 30),
+                Text(
+                  gameRoomController.getCurrentPlayer(state.gameRoom)?.answer ??
+                      'No answer provided',
+                  style: AppStyles.secondary.copyWith(fontSize: 30),
+                ),
+              ],
             ),
             child: CustomTextFieldAnswer(
               controller: answer,
@@ -37,10 +52,19 @@ class QuestionGameScreen extends StatelessWidget {
           const Spacer(),
           Visibility(
             visible: (state is QuestionGameLoaded),
+            replacement: Visibility(
+              visible: gameRoomController.isHost(),
+              child: MenuButton(
+                text: 'See answers',
+                onPressed: () {
+                  gameRoomController.showAnswers(state.code);
+                },
+              ),
+            ),
             child: MenuButton(
               text: 'Submit',
               onPressed: () {
-                BlocProvider.of<GameRoomController>(context).sendAnswer(
+                gameRoomController.sendAnswer(
                   state.code,
                   answer.text,
                 );

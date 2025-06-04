@@ -15,7 +15,7 @@ class MenuScreen extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/images/menum.png',
+            'assets/images/menug.gif',
             fit: BoxFit.cover,
           ),
           Align(

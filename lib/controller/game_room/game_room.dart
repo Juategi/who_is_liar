@@ -5,6 +5,7 @@ class GameRoom {
   List<Player> players = [];
   List<Question> questionsAnswered = [];
   String? impostor;
+  bool? show;
 
   GameRoom({
     required this.createdAt,
@@ -13,6 +14,7 @@ class GameRoom {
     this.currentQuestion,
     this.questionsAnswered = const [],
     required this.impostor,
+    this.show = false,
   });
 
   GameRoom copyWith({
@@ -22,6 +24,7 @@ class GameRoom {
     List<Player>? players,
     List<Question>? questionsAnswered,
     String? impostor,
+    bool? show,
   }) {
     return GameRoom(
       createdAt: createdAt ?? this.createdAt,
@@ -31,6 +34,7 @@ class GameRoom {
       questionsAnswered:
           questionsAnswered ?? List<Question>.from(this.questionsAnswered),
       impostor: impostor ?? this.impostor,
+      show: show ?? this.show,
     );
   }
 }
@@ -60,20 +64,20 @@ class Player {
 
 class Question {
   int id;
-  String qt;
-  String qf;
+  String originalQuestion;
+  String impostorQuestion;
 
   Question({
     required this.id,
-    required this.qt,
-    required this.qf,
+    required this.originalQuestion,
+    required this.impostorQuestion,
   });
 
   factory Question.fromJson(Map<String, dynamic> json) {
     return Question(
       id: json['id'] as int,
-      qt: json['qt'] as String,
-      qf: json['qf'] as String,
+      originalQuestion: json['originalQuestion'] as String,
+      impostorQuestion: json['impostorQuestion'] as String,
     );
   }
 }

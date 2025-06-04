@@ -33,3 +33,7 @@ class QuestionGameLoaded extends RoomLoaded {
 class QuestionGameAnswerSent extends RoomLoaded {
   QuestionGameAnswerSent({required super.code, required super.gameRoom});
 }
+
+class ShowAnswers extends RoomLoaded {
+  ShowAnswers({required super.code, required super.gameRoom});
+}

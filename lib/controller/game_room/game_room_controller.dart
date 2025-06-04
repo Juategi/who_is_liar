@@ -39,11 +39,12 @@ class GameRoomController extends Cubit<GameRoomState> {
           code: code,
           createdAt: data!['createdAt'] as int,
           impostor: data['impostor'] as String?,
+          show: data['show'] as bool? ?? false,
           currentQuestion: data['currentQuestion'] != null
               ? Question(
                   id: data['currentQuestion']['id'],
-                  qt: data['currentQuestion']['qt'],
-                  qf: data['currentQuestion']['qf'],
+                  originalQuestion: data['currentQuestion']['originalQuestion'],
+                  impostorQuestion: data['currentQuestion']['impostorQuestion'],
                 )
               : null,
           players: data['players'] != null
@@ -57,10 +58,11 @@ class GameRoomController extends Cubit<GameRoomState> {
                 }).toList()
               : [],
         );
-        if (gameRoom.currentQuestion != null) {
-          String? checkAnswer = gameRoom.players
-              .firstWhere((player) => player.id == nameModel.getId())
-              .answer;
+        if (gameRoom.show == true) {
+          emit(ShowAnswers(code: code, gameRoom: gameRoom));
+          return;
+        } else if (gameRoom.currentQuestion != null) {
+          String? checkAnswer = getCurrentPlayer(gameRoom)!.answer;
           if (checkAnswer != null && checkAnswer.isNotEmpty) {
             emit(
               QuestionGameAnswerSent(
@@ -83,12 +85,30 @@ class GameRoomController extends Cubit<GameRoomState> {
 
   bool isHost() {
     final state = this.state;
-    if (state is WaitingRoomLoaded) {
-      return state.gameRoom!.players
-          .firstWhere((player) => player.id == nameModel.getId())
-          .isHost;
+    if (state is RoomLoaded) {
+      return getCurrentPlayer(state.gameRoom!)!.isHost;
     }
     return false;
+  }
+
+  bool isImpostor() {
+    final state = this.state;
+    if (state is RoomLoaded) {
+      return getCurrentPlayer(state.gameRoom!)!.id == state.gameRoom!.impostor;
+    }
+    return false;
+  }
+
+  Player? getCurrentPlayer(GameRoom? gameRoom) {
+    final state = this.state;
+    if (gameRoom == null) {
+      return null;
+    }
+    if (state is RoomLoaded) {
+      return gameRoom.players
+          .firstWhere((player) => player.id == nameModel.getId());
+    }
+    throw Exception('No current player found');
   }
 
   Future<void> loadNextQuestion(String code) async {
@@ -107,8 +127,18 @@ class GameRoomController extends Cubit<GameRoomState> {
     }
   }
 
+  Future<void> showAnswers(String code) async {
+    try {
+      await gameRoomModel.showAnswers(code);
+    } catch (e) {
+      emit(GameRoomError(message: 'Failed to send answer: $e'));
+    }
+  }
+
   void dispose() {
+    String code = state is RoomLoaded ? (state as RoomLoaded).code : '';
     _subscription?.cancel();
+    gameRoomModel.leaveGame(code);
     super.close();
   }
 }
