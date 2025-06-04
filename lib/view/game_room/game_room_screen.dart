@@ -38,7 +38,6 @@ class _GameRoomScreenState extends State<GameRoomScreen> {
         BlocProvider.of<GameRoomController>(context).createRoom();
       }
     });
-    _gameRoomController.context = context; // Set the context for the controller
     return Scaffold(
       body: Background(
         children: [
