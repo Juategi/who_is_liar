@@ -18,12 +18,23 @@ class ShowQuestionsScreen extends StatelessWidget {
             itemCount: gameRoom?.players.length ?? 0,
             itemBuilder: (context, index) {
               final player = gameRoom!.players[index];
-              return Text(
-                player.name,
-                style: AppStyles.secondary.copyWith(
-                  fontSize: 25,
-                  color: ColorUtils.randomColor(),
-                ),
+              return Row(
+                children: [
+                  Text(
+                    player.name,
+                    style: AppStyles.secondary.copyWith(
+                      fontSize: 25,
+                      color: ColorUtils.randomColor(),
+                    ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    player.answer ?? 'No answer',
+                    style: AppStyles.secondary.copyWith(
+                      fontSize: 25,
+                    ),
+                  ),
+                ],
               );
             },
           ),

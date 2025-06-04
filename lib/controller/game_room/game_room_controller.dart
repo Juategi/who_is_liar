@@ -33,31 +33,9 @@ class GameRoomController extends Cubit<GameRoomState> {
   void _listenRoom(String code) {
     _subscription =
         gameRoomModel.listenRoom(code).listen((DatabaseEvent event) {
-      final data = event.snapshot.value as Map?;
       try {
-        final gameRoom = GameRoom(
-          code: code,
-          createdAt: data!['createdAt'] as int,
-          impostor: data['impostor'] as String?,
-          show: data['show'] as bool? ?? false,
-          currentQuestion: data['currentQuestion'] != null
-              ? Question(
-                  id: data['currentQuestion']['id'],
-                  originalQuestion: data['currentQuestion']['originalQuestion'],
-                  impostorQuestion: data['currentQuestion']['impostorQuestion'],
-                )
-              : null,
-          players: data['players'] != null
-              ? (data['players'] as Map).entries.map((e) {
-                  return Player(
-                    id: e.value['id'] as String,
-                    name: e.value['name'],
-                    isHost: e.value['isHost'] as bool? ?? false,
-                    answer: e.value['answer'] as String?,
-                  );
-                }).toList()
-              : [],
-        );
+        final data = event.snapshot.value as Map?;
+        final gameRoom = GameRoom.fromMap(data!, code);
         if (gameRoom.show == true) {
           emit(ShowAnswers(code: code, gameRoom: gameRoom));
           return;
@@ -108,7 +86,7 @@ class GameRoomController extends Cubit<GameRoomState> {
       return gameRoom.players
           .firstWhere((player) => player.id == nameModel.getId());
     }
-    throw Exception('No current player found');
+    return null;
   }
 
   Future<void> loadNextQuestion(String code) async {

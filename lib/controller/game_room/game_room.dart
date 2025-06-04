@@ -37,6 +37,32 @@ class GameRoom {
       show: show ?? this.show,
     );
   }
+
+  factory GameRoom.fromMap(Map<dynamic, dynamic> map, String code) {
+    return GameRoom(
+      code: code,
+      createdAt: map['createdAt'] as int,
+      impostor: map['impostor'] as String?,
+      show: map['show'] as bool? ?? false,
+      currentQuestion: map['currentQuestion'] != null
+          ? Question(
+              id: map['currentQuestion']['id'],
+              originalQuestion: map['currentQuestion']['originalQuestion'],
+              impostorQuestion: map['currentQuestion']['impostorQuestion'],
+            )
+          : null,
+      players: map['players'] != null
+          ? (map['players'] as Map).entries.map((e) {
+              return Player(
+                id: e.value['id'] as String,
+                name: e.value['name'],
+                isHost: e.value['isHost'] as bool? ?? false,
+                answer: e.value['answer'] as String?,
+              );
+            }).toList()
+          : [],
+    );
+  }
 }
 
 class Player {
