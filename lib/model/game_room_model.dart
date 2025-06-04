@@ -53,8 +53,10 @@ class GameRoomModel {
     final DatabaseReference questionRef = database.ref('nodes/$code');
     final DatabaseEvent event = await questionRef.once();
     final gameRoom = event.snapshot.value as Map?;
-    final questionsAnswered =
-        (gameRoom?['questionsAnswered'] as List<int>?) ?? [];
+    final List<int> questionsAnswered =
+        (gameRoom?['questionsAnswered'] as List<dynamic>? ?? [])
+            .map((e) => e as int)
+            .toList();
 
     // Otherwise, pick a new random question and update the database
     int randomIndex;
