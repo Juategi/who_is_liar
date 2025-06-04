@@ -83,7 +83,20 @@ class GameRoomModel {
       },
       'questionsAnswered': questionsAnswered,
       'impostor': impostor,
+      'show': false,
     });
+
+    //For each player, reset their answer
+    final DatabaseReference playersRef = database.ref('nodes/$code/players');
+    final DatabaseEvent playersEvent = await playersRef.once();
+    final playersData = playersEvent.snapshot.value as Map?;
+    if (playersData != null) {
+      for (final playerId in playersData.keys) {
+        await database.ref('nodes/$code/players/$playerId').update({
+          'answer': '',
+        });
+      }
+    }
   }
 
   Future<void> sendAnswer(String code, String answer) async {
