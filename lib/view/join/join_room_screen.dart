@@ -46,7 +46,8 @@ class JoinRoomScreen extends StatelessWidget {
                   );
                   return;
                 }
-                Navigator.pushNamed(context, '/start', arguments: code);
+                Navigator.pushNamed(context, '/start',
+                    arguments: code.toUpperCase());
               },
             ),
           ],

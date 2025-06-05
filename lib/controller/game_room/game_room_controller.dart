@@ -24,7 +24,9 @@ class GameRoomController extends Cubit<GameRoomState> {
       await gameRoomModel.joinRoom(code);
       _listenRoom(code);
     } catch (e) {
-      emit(GameRoomError(message: 'Failed to join room: $e'));
+      if (!isClosed) {
+        emit(GameRoomError(message: 'Failed to join room: $e'));
+      }
     }
   }
 
@@ -53,8 +55,9 @@ class GameRoomController extends Cubit<GameRoomState> {
           emit(WaitingRoomLoaded(code: code, gameRoom: gameRoom));
         }
       } catch (e) {
-        emit(GameRoomError(message: 'No data room found'));
-        return;
+        if (!isClosed) {
+          emit(GameRoomError(message: 'No data room found'));
+        }
       }
     });
   }
@@ -87,11 +90,26 @@ class GameRoomController extends Cubit<GameRoomState> {
     return null;
   }
 
+  String getImpostorName(GameRoom? gameRoom) {
+    final state = this.state;
+    if (gameRoom == null) {
+      return '';
+    }
+    if (state is RoomLoaded) {
+      return gameRoom.players
+          .firstWhere((player) => player.id == gameRoom.impostor)
+          .name;
+    }
+    return '';
+  }
+
   Future<void> loadNextQuestion(String code) async {
     try {
       await gameRoomModel.loadNextQuestion(code);
     } catch (e) {
-      emit(GameRoomError(message: 'Failed to start game: $e'));
+      if (!isClosed) {
+        emit(GameRoomError(message: 'Failed to start game: $e'));
+      }
     }
   }
 
@@ -99,7 +117,9 @@ class GameRoomController extends Cubit<GameRoomState> {
     try {
       await gameRoomModel.sendAnswer(code, answer);
     } catch (e) {
-      emit(GameRoomError(message: 'Failed to send answer: $e'));
+      if (!isClosed) {
+        emit(GameRoomError(message: 'Failed to send answer: $e'));
+      }
     }
   }
 
@@ -107,7 +127,9 @@ class GameRoomController extends Cubit<GameRoomState> {
     try {
       await gameRoomModel.showAnswers(code);
     } catch (e) {
-      emit(GameRoomError(message: 'Failed to send answer: $e'));
+      if (!isClosed) {
+        emit(GameRoomError(message: 'Failed to show answers: $e'));
+      }
     }
   }
 

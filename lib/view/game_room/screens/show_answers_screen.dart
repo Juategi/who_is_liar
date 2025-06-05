@@ -5,6 +5,7 @@ import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/settings/styles.dart';
 import 'package:who_is_liar/utils/color_utils.dart';
 import 'package:who_is_liar/view/game_room/widgets/impostor_tooltip.dart';
+import 'package:who_is_liar/view/game_room/widgets/question_timer.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
 
 class ShowAnswersScreen extends StatelessWidget {
@@ -33,11 +34,16 @@ class ShowAnswersScreen extends StatelessWidget {
             impostorQuestion: gameRoom?.currentQuestion?.impostorQuestion ??
                 'Error: No impostor question found',
           ),
+          QuestionTimer(
+            timeUpText:
+                'The impostor is ${gameRoomController.getImpostorName(gameRoom)}',
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: gameRoom?.players.length ?? 0,
               itemBuilder: (context, index) {
                 final player = gameRoom!.players[index];
+                String value = '';
                 return Visibility(
                   visible: player.answer != null && player.answer!.isNotEmpty,
                   child: Padding(
@@ -46,12 +52,30 @@ class ShowAnswersScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          player.name,
-                          style: AppStyles.secondary.copyWith(
-                            fontSize: 25,
-                            color: ColorUtils.randomColor(),
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              player.name,
+                              style: AppStyles.secondary.copyWith(
+                                fontSize: 25,
+                                color: ColorUtils.randomColor(),
+                              ),
+                            ),
+                            Visibility(
+                              visible: player.id !=
+                                  gameRoomController
+                                      .getCurrentPlayer(gameRoom)
+                                      ?.id,
+                              child: Radio<String>(
+                                value: value,
+                                groupValue: player.id,
+                                onChanged: (value) {
+                                  value = player.id;
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                         const SizedBox(height: 4),
                         Text(
@@ -67,7 +91,6 @@ class ShowAnswersScreen extends StatelessWidget {
               },
             ),
           ),
-          const Spacer(),
           Visibility(
             visible: gameRoomController.isHost(),
             child: MenuButton(

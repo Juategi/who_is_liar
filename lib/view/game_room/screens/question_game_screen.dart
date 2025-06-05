@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
@@ -21,13 +22,20 @@ class QuestionGameScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 45),
-          Text(
-            (gameRoomController.isImpostor()
-                    ? state.gameRoom?.currentQuestion?.impostorQuestion
-                    : state.gameRoom?.currentQuestion?.originalQuestion) ??
-                "No question available",
-            style: AppStyles.secondary.copyWith(fontSize: 38),
-            textAlign: TextAlign.center,
+          AnimatedTextKit(
+            isRepeatingAnimation: false,
+            repeatForever: false,
+            totalRepeatCount: 1,
+            animatedTexts: [
+              TyperAnimatedText(
+                (gameRoomController.isImpostor()
+                        ? state.gameRoom?.currentQuestion?.impostorQuestion
+                        : state.gameRoom?.currentQuestion?.originalQuestion) ??
+                    "No question available",
+                textStyle: AppStyles.secondary.copyWith(fontSize: 38),
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
           const SizedBox(height: 20),
           Visibility(
