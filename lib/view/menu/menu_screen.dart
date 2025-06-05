@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:who_is_liar/model/name_model.dart';
+import 'package:who_is_liar/view/widgets/initial_tooltip.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
 import 'package:who_is_liar/view/widgets/name_widget.dart';
 
@@ -18,6 +19,7 @@ class MenuScreen extends StatelessWidget {
             'assets/images/menum.png',
             fit: BoxFit.cover,
           ),
+          InitialTooltip(),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(

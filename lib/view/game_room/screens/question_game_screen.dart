@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
 import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/settings/styles.dart';
-import 'package:who_is_liar/view/widgets/custom_text_field_answer.dart';
+import 'package:who_is_liar/view/game_room/widgets/custom_text_field_answer.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
 
 class QuestionGameScreen extends StatelessWidget {

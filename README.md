@@ -4,9 +4,8 @@ Translations
 Ads
 Remote config update
 Move files to storage
-Get loading screen
+Get menu screen
 Get questions
-Tooltips
-Answer screens
+Voting and results screen
 Tests
 CICD
