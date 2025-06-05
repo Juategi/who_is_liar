@@ -40,6 +40,8 @@ dependencies:
   flutter_bloc: ^9.1.1
   animated_text_kit: ^4.2.3
   flutter_svg: ^2.1.0
+  upgrader: ^11.4.0
+  mockito: ^5.4.6
 
 dev_dependencies:
   flutter_test:
