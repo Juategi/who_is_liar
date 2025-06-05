@@ -4,11 +4,11 @@ import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
 import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/settings/styles.dart';
 import 'package:who_is_liar/utils/color_utils.dart';
-import 'package:who_is_liar/view/widgets/impostor_tooltip.dart';
+import 'package:who_is_liar/view/game_room/widgets/impostor_tooltip.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
 
-class ShowQuestionsScreen extends StatelessWidget {
-  const ShowQuestionsScreen({super.key, required this.state});
+class ShowAnswersScreen extends StatelessWidget {
+  const ShowAnswersScreen({super.key, required this.state});
   final RoomLoaded state;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class ShowQuestionsScreen extends StatelessWidget {
         spacing: 16,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 16),
+          const SizedBox(height: 40),
           Text(
             'The question is: ${gameRoom?.currentQuestion?.originalQuestion ?? 'Error: No question available'}',
             style: AppStyles.secondary.copyWith(

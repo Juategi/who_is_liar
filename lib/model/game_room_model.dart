@@ -28,11 +28,19 @@ class GameRoomModel {
 
   Future<void> joinRoom(String code) async {
     final String id = nameModel.getId();
-    database.ref('nodes/$code/players/$id').set({
-      'name': nameModel.getName(),
-      'isHost': false,
-      'id': id,
-    });
+    final DatabaseReference playersRef = database.ref('nodes/$code/players');
+    final DatabaseEvent event = await playersRef.once();
+    final players = event.snapshot.value as Map?;
+    final int numberOfPlayers = players?.length ?? 0;
+    if (numberOfPlayers >= 8) {
+      throw Exception('Room is full');
+    } else {
+      database.ref('nodes/$code/players/$id').set({
+        'name': nameModel.getName(),
+        'isHost': false,
+        'id': id,
+      });
+    }
   }
 
   Stream<DatabaseEvent> listenRoom(String code) {

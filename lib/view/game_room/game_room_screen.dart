@@ -7,7 +7,7 @@ import 'package:who_is_liar/view/game_room/screens/question_game_screen.dart';
 import 'package:who_is_liar/view/game_room/screens/waiting_room_screen.dart';
 import 'package:who_is_liar/view/widgets/background.dart';
 
-import 'screens/show_questions_screen.dart';
+import 'screens/show_answers_screen.dart';
 
 class GameRoomScreen extends StatefulWidget {
   const GameRoomScreen({super.key});
@@ -66,7 +66,7 @@ class _GameRoomScreenState extends State<GameRoomScreen> {
                   state: state as RoomLoaded,
                 );
               } else if (state is ShowAnswers) {
-                return ShowQuestionsScreen(
+                return ShowAnswersScreen(
                   state: state as RoomLoaded,
                 );
               }

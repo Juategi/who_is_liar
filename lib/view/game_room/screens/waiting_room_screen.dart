@@ -20,6 +20,7 @@ class WaitingRoomScreen extends StatelessWidget {
         child: Column(
           spacing: 16,
           children: [
+            const SizedBox(height: 20),
             GameCodeWidget(code: state.code),
             const SizedBox(height: 20),
             PlayersList(gameRoom: state.gameRoom),

@@ -16,7 +16,7 @@ class ImpostorTooltip extends StatelessWidget {
       replacement: Text(
         'You are not the imposter! Try to guess who was the imposter based on the answers given. Discuss with each other to find out.',
         style: AppStyles.secondary.copyWith(
-          fontSize: 25,
+          fontSize: 20,
           color: Colors.green[200],
         ),
         maxLines: 8,
@@ -29,8 +29,8 @@ class ImpostorTooltip extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 'assets/images/mask.svg',
-                height: 100,
-                width: 100,
+                height: 80,
+                width: 80,
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   Colors.red[200]!,
@@ -42,7 +42,7 @@ class ImpostorTooltip extends StatelessWidget {
                 child: Text(
                   'You are the impostor! Try to fool others into thinking you answered the same question.',
                   style: AppStyles.secondary.copyWith(
-                    fontSize: 25,
+                    fontSize: 20,
                     color: Colors.red[200],
                   ),
                   maxLines: 8,
@@ -53,7 +53,7 @@ class ImpostorTooltip extends StatelessWidget {
           Text(
             'Your impostor question was: $impostorQuestion',
             style: AppStyles.secondary.copyWith(
-              fontSize: 25,
+              fontSize: 20,
               color: Colors.red[300],
             ),
             maxLines: 8,
