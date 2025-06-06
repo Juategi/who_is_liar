@@ -1,0 +1,247 @@
+[
+  {
+    "id": 0,
+    "originalQuestion": "¿Qué fruta te gusta más?",
+    "impostorQuestion": "¿Qué verdura comes sin ganas?"
+  },
+  {
+    "id": 1,
+    "originalQuestion": "¿Cuál es tu película favorita?",
+    "impostorQuestion": "¿Cuál es la película que menos te gustó?"
+  },
+  {
+    "id": 2,
+    "originalQuestion": "¿Qué animal te gustaría tener como mascota?",
+    "impostorQuestion": "¿Qué animal jamás tendrías como mascota?"
+  },
+  {
+    "id": 3,
+    "originalQuestion": "¿Qué comida pedirías en una primera cita?",
+    "impostorQuestion": "¿Qué comida pedirías si tuvieras resaca?"
+  },
+  {
+    "id": 4,
+    "originalQuestion": "¿Qué harías si ganaras la lotería?",
+    "impostorQuestion": "¿Qué no harías ni con mucho dinero?"
+  },
+  {
+    "id": 5,
+    "originalQuestion": "¿Cuál es tu serie favorita actualmente?",
+    "impostorQuestion": "¿Cuál es la serie que no terminaste?"
+  },
+  {
+    "id": 6,
+    "originalQuestion": "¿Qué superpoder te gustaría tener?",
+    "impostorQuestion": "¿Qué superpoder te parece inútil?"
+  },
+  {
+    "id": 7,
+    "originalQuestion": "¿Qué lugar del mundo te gustaría visitar?",
+    "impostorQuestion": "¿Qué lugar no visitarías jamás?"
+  },
+  {
+    "id": 8,
+    "originalQuestion": "¿Cuál es tu videojuego favorito?",
+    "impostorQuestion": "¿Cuál es el videojuego más aburrido para ti?"
+  },
+  {
+    "id": 9,
+    "originalQuestion": "¿Qué harías un día entero si no tuvieras responsabilidades?",
+    "impostorQuestion": "¿Qué no harías ni por apuesta?"
+  },
+  {
+    "id": 10,
+    "originalQuestion": "¿Cuál fue tu juguete favorito de niño?",
+    "impostorQuestion": "¿Cuál fue el peor regalo que recibiste?"
+  },
+  {
+    "id": 11,
+    "originalQuestion": "¿Qué canción podrías escuchar en bucle?",
+    "impostorQuestion": "¿Qué canción odias sin razón?"
+  },
+  {
+    "id": 12,
+    "originalQuestion": "¿Cuál es tu postre favorito?",
+    "impostorQuestion": "¿Cuál es tu postre menos favorito?"
+  },
+  {
+    "id": 13,
+    "originalQuestion": "¿Qué harías en una casa embrujada?",
+    "impostorQuestion": "¿Qué harías si ves un fantasma?"
+  },
+  {
+    "id": 14,
+    "originalQuestion": "¿Qué harías si fueras invisible por un día?",
+    "impostorQuestion": "¿Qué harías si nadie te pudiera ver?"
+  },
+  {
+    "id": 15,
+    "originalQuestion": "¿Cuál es tu red social favorita?",
+    "impostorQuestion": "¿Qué red social te parece innecesaria?"
+  },
+  {
+    "id": 16,
+    "originalQuestion": "¿Qué emoji usas más?",
+    "impostorQuestion": "¿Qué emoji nunca usas?"
+  },
+  {
+    "id": 17,
+    "originalQuestion": "¿Qué haces primero al levantarte?",
+    "impostorQuestion": "¿Qué haces justo antes de dormir?"
+  },
+  {
+    "id": 18,
+    "originalQuestion": "¿Cuál es tu sabor de helado favorito?",
+    "impostorQuestion": "¿Cuál es el sabor de helado más raro que probaste?"
+  },
+  {
+    "id": 19,
+    "originalQuestion": "¿Qué app usas más en tu móvil?",
+    "impostorQuestion": "¿Qué app te parece inútil?"
+  },
+  {
+    "id": 20,
+    "originalQuestion": "¿Cuál es tu actor o actriz favorito?",
+    "impostorQuestion": "¿Qué actor o actriz no te gusta?"
+  },
+  {
+    "id": 21,
+    "originalQuestion": "¿Qué deporte te gusta ver?",
+    "impostorQuestion": "¿Qué deporte te aburre?"
+  },
+  {
+    "id": 22,
+    "originalQuestion": "¿Qué animal te representa mejor?",
+    "impostorQuestion": "¿Qué animal te da miedo?"
+  },
+  {
+    "id": 23,
+    "originalQuestion": "¿Cuál fue tu peor castigo de niño?",
+    "impostorQuestion": "¿Qué castigo recuerdas como injusto?"
+  },
+  {
+    "id": 24,
+    "originalQuestion": "¿Qué harías si te encontraras una cartera llena de dinero?",
+    "impostorQuestion": "¿Qué harías si encontraras algo ilegal?"
+  },
+  {
+    "id": 25,
+    "originalQuestion": "¿Cuál fue el viaje más divertido que has hecho?",
+    "impostorQuestion": "¿Cuál fue el viaje más aburrido que has hecho?"
+  },
+  {
+    "id": 26,
+    "originalQuestion": "¿Qué harías si te toca cantar en karaoke?",
+    "impostorQuestion": "¿Qué harías si te obligan a cantar en público?"
+  },
+  {
+    "id": 27,
+    "originalQuestion": "¿Qué harías si te encuentras con un famoso?",
+    "impostorQuestion": "¿Qué harías si te confunden con un famoso?"
+  },
+  {
+    "id": 28,
+    "originalQuestion": "¿Qué color usarías para pintar tu habitación?",
+    "impostorQuestion": "¿Qué color nunca usarías para tu casa?"
+  },
+  {
+    "id": 29,
+    "originalQuestion": "¿Cuál es tu sabor de pizza favorito?",
+    "impostorQuestion": "¿Qué ingrediente te arruina la pizza?"
+  },
+  {
+    "id": 30,
+    "originalQuestion": "¿Cuál es tu festividad favorita?",
+    "impostorQuestion": "¿Qué festividad no celebras nunca?"
+  },
+  {
+    "id": 31,
+    "originalQuestion": "¿Qué te da más risa últimamente?",
+    "impostorQuestion": "¿Qué chiste te parece muy malo?"
+  },
+  {
+    "id": 32,
+    "originalQuestion": "¿Qué harías en tu día ideal?",
+    "impostorQuestion": "¿Qué harías en tu peor día?"
+  },
+  {
+    "id": 33,
+    "originalQuestion": "¿Qué personaje de ficción te gustaría ser?",
+    "impostorQuestion": "¿Qué personaje te parece insoportable?"
+  },
+  {
+    "id": 34,
+    "originalQuestion": "¿Qué haces cuando estás aburrido?",
+    "impostorQuestion": "¿Qué haces cuando no tienes internet?"
+  },
+  {
+    "id": 35,
+    "originalQuestion": "¿Cuál es tu película animada favorita?",
+    "impostorQuestion": "¿Cuál es tu película animada menos favorita?"
+  },
+  {
+    "id": 36,
+    "originalQuestion": "¿Cuál es tu videojuego retro favorito?",
+    "impostorQuestion": "¿Qué videojuego viejo te parecía difícil?"
+  },
+  {
+    "id": 37,
+    "originalQuestion": "¿Qué harías si te despiertas siendo millonario?",
+    "impostorQuestion": "¿Qué harías si pierdes todo tu dinero?"
+  },
+  {
+    "id": 38,
+    "originalQuestion": "¿Qué olor te gusta más?",
+    "impostorQuestion": "¿Qué olor te molesta mucho?"
+  },
+  {
+    "id": 39,
+    "originalQuestion": "¿Qué harías en un apocalipsis zombie?",
+    "impostorQuestion": "¿Qué harías si tus amigos desaparecen?"
+  },
+  {
+    "id": 40,
+    "originalQuestion": "¿Qué comida no puede faltar en una fiesta?",
+    "impostorQuestion": "¿Qué comida no entiendes por qué gusta?"
+  },
+  {
+    "id": 41,
+    "originalQuestion": "¿Qué harías si fueras presidente por un día?",
+    "impostorQuestion": "¿Qué decisión cambiarías de un presidente?"
+  },
+  {
+    "id": 42,
+    "originalQuestion": "¿Qué instrumento musical te gustaría tocar?",
+    "impostorQuestion": "¿Qué instrumento odias escuchar?"
+  },
+  {
+    "id": 43,
+    "originalQuestion": "¿Qué harías en la luna?",
+    "impostorQuestion": "¿Qué harías si no pudieras volver a la Tierra?"
+  },
+  {
+    "id": 44,
+    "originalQuestion": "¿Qué harías si fueras un gato?",
+    "impostorQuestion": "¿Qué harías si fueras un perro?"
+  },
+  {
+    "id": 45,
+    "originalQuestion": "¿Qué tipo de clima te gusta más?",
+    "impostorQuestion": "¿Qué tipo de clima te pone de mal humor?"
+  },
+  {
+    "id": 46,
+    "originalQuestion": "¿Qué harías si pudieras viajar en el tiempo?",
+    "impostorQuestion": "¿A qué época no querrías viajar?"
+  },
+  {
+    "id": 47,
+    "originalQuestion": "¿Cuál es tu bebida favorita?",
+    "impostorQuestion": "¿Qué bebida no tomarías nunca?"
+  },
+  {
+    "id": 48,
+    "originalQuestion": "¿Qué harías si pudieras cambiar de cuerpo con alguien por un día?",
+    "impostorQuestion": "¿Qué harías si nadie recordara quién eres?"
+  }
+]
