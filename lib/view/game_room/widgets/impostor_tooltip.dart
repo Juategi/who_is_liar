@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,7 +15,7 @@ class ImpostorTooltip extends StatelessWidget {
     return Visibility(
       visible: gameRoomController.isImpostor(),
       replacement: Text(
-        'You are not the imposter! Try to guess who was the imposter based on the answers given. Discuss with each other to find out.',
+        'not_impostor_tooltip'.tr(),
         style: AppStyles.secondary.copyWith(
           fontSize: 20,
           color: Colors.green[200],
@@ -40,7 +41,7 @@ class ImpostorTooltip extends StatelessWidget {
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
-                  'You are the impostor! Try to fool others into thinking you answered the same question.',
+                  'impostor_tooltip'.tr(),
                   style: AppStyles.secondary.copyWith(
                     fontSize: 20,
                     color: Colors.red[200],
@@ -51,7 +52,7 @@ class ImpostorTooltip extends StatelessWidget {
             ],
           ),
           Text(
-            'Your impostor question was: $impostorQuestion',
+            'impostor_question'.tr(args: [impostorQuestion]),
             style: AppStyles.secondary.copyWith(
               fontSize: 20,
               color: Colors.red[300],

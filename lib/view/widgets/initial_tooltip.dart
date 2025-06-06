@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:who_is_liar/settings/styles.dart';
 
@@ -14,7 +15,7 @@ class InitialTooltip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'How to play?',
+              'how_to_play'.tr(),
               style: AppStyles.secondary.copyWith(
                 fontSize: 28,
               ),

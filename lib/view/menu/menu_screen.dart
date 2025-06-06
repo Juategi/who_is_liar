@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:upgrader/upgrader.dart';
@@ -34,33 +35,39 @@ class MenuScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        MenuButton(
-                          text: 'Create Game',
-                          onPressed: () {
-                            if (nameController.getName().isNotEmpty) {
-                              Navigator.pushNamed(context, '/start');
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Please enter a name'),
-                                ),
-                              );
-                            }
-                          },
+                        SizedBox(
+                          width: 150,
+                          child: MenuButton(
+                            text: 'create_game'.tr(),
+                            onPressed: () {
+                              if (nameController.getName().isNotEmpty) {
+                                Navigator.pushNamed(context, '/start');
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('please_enter_a_name'.tr()),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
                         ),
-                        MenuButton(
-                          text: 'Join Game',
-                          onPressed: () {
-                            if (nameController.getName().isNotEmpty) {
-                              Navigator.pushNamed(context, '/join');
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Please enter a name'),
-                                ),
-                              );
-                            }
-                          },
+                        SizedBox(
+                          width: 150,
+                          child: MenuButton(
+                            text: 'join_game'.tr(),
+                            onPressed: () {
+                              if (nameController.getName().isNotEmpty) {
+                                Navigator.pushNamed(context, '/join');
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('please_enter_a_name'.tr()),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
                         ),
                       ],
                     ),

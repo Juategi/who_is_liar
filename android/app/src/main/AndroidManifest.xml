@@ -3,6 +3,9 @@
         android:label="who_is_liar"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8550647653356634~7419872127"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

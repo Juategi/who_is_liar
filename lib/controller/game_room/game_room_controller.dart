@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room/game_room.dart';
@@ -27,11 +28,11 @@ class GameRoomController extends Cubit<GameRoomState> {
       if (exists) {
         _listenRoom(code);
       } else {
-        emit(GameRoomError(message: 'Room does not exist or is full'));
+        emit(GameRoomError(message: 'room_does_not_exist_or_is_full'.tr()));
       }
     } catch (e) {
       if (!isClosed) {
-        emit(GameRoomError(message: 'Failed to join room: $e'));
+        emit(GameRoomError(message: 'failed_to_join_room'.tr(args: ['$e'])));
       }
     }
   }
@@ -69,7 +70,8 @@ class GameRoomController extends Cubit<GameRoomState> {
         }
       } catch (e) {
         if (!isClosed) {
-          emit(GameRoomError(message: e.toString()));
+          emit(GameRoomError(
+              message: 'unexpected_error'.tr(args: [e.toString()])));
         }
       }
     });
@@ -134,7 +136,7 @@ class GameRoomController extends Cubit<GameRoomState> {
       playerVoted = null; // Reset playerVoted after loading next question
     } catch (e) {
       if (!isClosed) {
-        emit(GameRoomError(message: 'Failed to start game: $e'));
+        emit(GameRoomError(message: 'failed_to_start_game'.tr(args: ['$e'])));
       }
     }
   }
@@ -144,7 +146,7 @@ class GameRoomController extends Cubit<GameRoomState> {
       await gameRoomModel.sendAnswer(code, answer);
     } catch (e) {
       if (!isClosed) {
-        emit(GameRoomError(message: 'Failed to send answer: $e'));
+        emit(GameRoomError(message: 'failed_to_send_answer'.tr(args: ['$e'])));
       }
     }
   }
@@ -155,7 +157,7 @@ class GameRoomController extends Cubit<GameRoomState> {
       playerVoted = playerId;
     } catch (e) {
       if (!isClosed) {
-        emit(GameRoomError(message: 'Failed to send vote: $e'));
+        emit(GameRoomError(message: 'failed_to_send_vote'.tr(args: ['$e'])));
       }
     }
   }
@@ -165,7 +167,7 @@ class GameRoomController extends Cubit<GameRoomState> {
       await gameRoomModel.showAnswers(code);
     } catch (e) {
       if (!isClosed) {
-        emit(GameRoomError(message: 'Failed to show answers: $e'));
+        emit(GameRoomError(message: 'failed_to_show_answers'.tr(args: ['$e'])));
       }
     }
   }

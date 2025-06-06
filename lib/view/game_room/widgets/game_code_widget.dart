@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:who_is_liar/settings/styles.dart';
 
@@ -10,7 +11,7 @@ class GameCodeWidget extends StatelessWidget {
       spacing: 16,
       children: [
         Text(
-          'Game code:',
+          'game_code'.tr(),
           style: AppStyles.secondary.copyWith(
             fontSize: 25,
           ),

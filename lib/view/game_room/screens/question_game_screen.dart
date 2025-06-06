@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
@@ -31,7 +32,7 @@ class QuestionGameScreen extends StatelessWidget {
                 (gameRoomController.isImpostor()
                         ? state.gameRoom?.currentQuestion?.impostorQuestion
                         : state.gameRoom?.currentQuestion?.originalQuestion) ??
-                    "No question available",
+                    "no_question_available".tr(),
                 textStyle: AppStyles.secondary.copyWith(fontSize: 38),
                 textAlign: TextAlign.center,
               ),
@@ -43,13 +44,13 @@ class QuestionGameScreen extends StatelessWidget {
             replacement: Column(
               children: [
                 Text(
-                  'Answer sent successfully!',
+                  'answer_sent_successfully'.tr(),
                   style: AppStyles.secondary.copyWith(fontSize: 20),
                 ),
                 const SizedBox(height: 30),
                 Text(
                   gameRoomController.getCurrentPlayer(state.gameRoom)?.answer ??
-                      'No answer provided',
+                      'no_answer_provided'.tr(),
                   style: AppStyles.secondary.copyWith(fontSize: 30),
                 ),
               ],
@@ -64,14 +65,14 @@ class QuestionGameScreen extends StatelessWidget {
             replacement: Visibility(
               visible: gameRoomController.isHost(),
               child: MenuButton(
-                text: 'See answers',
+                text: 'see_answers'.tr(),
                 onPressed: () {
                   gameRoomController.showAnswers(state.code);
                 },
               ),
             ),
             child: MenuButton(
-              text: 'Submit',
+              text: 'submit'.tr(),
               onPressed: () {
                 gameRoomController.sendAnswer(
                   state.code,

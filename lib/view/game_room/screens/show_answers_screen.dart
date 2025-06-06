@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
@@ -19,12 +20,13 @@ class ShowAnswersScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
-        spacing: 16,
+        spacing: 8,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 40),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.06),
           Text(
-            'The question is: ${gameRoom?.currentQuestion?.originalQuestion ?? 'Error: No question available'}',
+            // 'The question is: ${gameRoom?.currentQuestion?.originalQuestion ?? 'Error: No question available'}',
+            '${'the_question_is'.tr()} ${gameRoom?.currentQuestion?.originalQuestion ?? 'error_no_question_available'.tr()}',
             style: AppStyles.secondary.copyWith(
               fontSize: 25,
             ),
@@ -32,11 +34,18 @@ class ShowAnswersScreen extends StatelessWidget {
           ),
           ImpostorTooltip(
             impostorQuestion: gameRoom?.currentQuestion?.impostorQuestion ??
-                'Error: No impostor question found',
+                'error_no_impostor_question_found'.tr(),
           ),
           QuestionTimer(
             timeUpText:
-                'The impostor is ${gameRoomController.getImpostorName(gameRoom)}',
+                '${'the_impostor_is'.tr()} ${gameRoomController.getImpostorName(gameRoom)}',
+          ),
+          Text(
+            'vote_for_the_impostor'.tr(),
+            style: AppStyles.secondary.copyWith(
+              fontSize: 25,
+            ),
+            textAlign: TextAlign.center,
           ),
           Expanded(
             child: ListView.builder(
@@ -59,7 +68,7 @@ class ShowAnswersScreen extends StatelessWidget {
           Visibility(
             visible: gameRoomController.isHost(),
             child: MenuButton(
-              text: 'Next Question',
+              text: 'next_question'.tr(),
               onPressed: () {
                 gameRoomController.loadNextQuestion(state.code);
               },

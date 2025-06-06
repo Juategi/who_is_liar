@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:who_is_liar/settings/styles.dart';
 import 'package:who_is_liar/view/widgets/background.dart';
@@ -17,7 +18,7 @@ class JoinRoomScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 100),
             Text(
-              'Write the game code:',
+              'write_game_code'.tr(),
               style: AppStyles.secondary.copyWith(
                 fontSize: 25,
               ),
@@ -33,12 +34,12 @@ class JoinRoomScreen extends StatelessWidget {
             ),
             const Spacer(),
             MenuButton(
-              text: 'Join game',
+              text: 'join_game'.tr(),
               onPressed: () {
                 if (code.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Please enter a code'),
+                    SnackBar(
+                      content: Text('please_enter_code'.tr()),
                       behavior: SnackBarBehavior.floating,
                       margin:
                           EdgeInsets.symmetric(horizontal: 16, vertical: 100),

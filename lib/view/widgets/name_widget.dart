@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:who_is_liar/model/name_model.dart';
@@ -11,7 +12,7 @@ class NameWidget extends StatelessWidget {
     String value = nameController.getName();
     return CustomTextField(
       value: value,
-      labelText: 'Enter your name',
+      labelText: 'enter_your_name'.tr(),
       onChanged: (String newValue) {
         nameController.setName(newValue);
       },

@@ -11,7 +11,7 @@ class MenuButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * 0.08,
+          horizontal: MediaQuery.of(context).size.width * 0.04,
           vertical: MediaQuery.of(context).size.height * 0.02,
         ),
       ),
@@ -20,6 +20,7 @@ class MenuButton extends StatelessWidget {
         style: AppStyles.primary.copyWith(
           fontSize: MediaQuery.of(context).size.width * 0.05,
         ),
+        maxLines: 1,
       ),
     );
   }

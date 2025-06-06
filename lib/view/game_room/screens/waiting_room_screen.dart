@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
@@ -28,7 +29,7 @@ class WaitingRoomScreen extends StatelessWidget {
             Visibility(
               visible: gameRoomController.isHost(),
               child: MenuButton(
-                text: 'Start game',
+                text: 'start_game'.tr(),
                 onPressed: () {
                   gameRoomController.loadNextQuestion(state.code);
                 },
