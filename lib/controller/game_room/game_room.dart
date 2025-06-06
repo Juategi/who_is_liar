@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class GameRoom {
   int createdAt;
   String code;
@@ -87,6 +89,44 @@ class Player {
   }
 }
 
+class QuestionDTO {
+  int id;
+  String originalQuestionES;
+  String originalQuestionEN;
+  String originalQuestionDE;
+  String originalQuestionFR;
+  String impostorQuestionES;
+  String impostorQuestionEN;
+  String impostorQuestionDE;
+  String impostorQuestionFR;
+
+  QuestionDTO({
+    required this.id,
+    required this.originalQuestionES,
+    required this.originalQuestionEN,
+    required this.originalQuestionDE,
+    required this.originalQuestionFR,
+    required this.impostorQuestionES,
+    required this.impostorQuestionEN,
+    required this.impostorQuestionDE,
+    required this.impostorQuestionFR,
+  });
+
+  factory QuestionDTO.fromJson(Map<String, dynamic> json) {
+    return QuestionDTO(
+      id: json['id'] as int,
+      originalQuestionES: json['originalQuestionES'] as String,
+      originalQuestionEN: json['originalQuestionEN'] as String,
+      originalQuestionDE: json['originalQuestionDE'] as String,
+      originalQuestionFR: json['originalQuestionFR'] as String,
+      impostorQuestionES: json['impostorQuestionES'] as String,
+      impostorQuestionEN: json['impostorQuestionEN'] as String,
+      impostorQuestionDE: json['impostorQuestionDE'] as String,
+      impostorQuestionFR: json['impostorQuestionFR'] as String,
+    );
+  }
+}
+
 class Question {
   int id;
   String originalQuestion;
@@ -98,11 +138,32 @@ class Question {
     required this.impostorQuestion,
   });
 
-  factory Question.fromJson(Map<String, dynamic> json) {
+  factory Question.fromDTO(QuestionDTO dto) {
+    String locale = PlatformDispatcher.instance.locale.languageCode;
+    String originalQuestion;
+    String impostorQuestion;
+
+    switch (locale) {
+      case 'es':
+        originalQuestion = dto.originalQuestionES;
+        impostorQuestion = dto.impostorQuestionES;
+        break;
+      case 'de':
+        originalQuestion = dto.originalQuestionDE;
+        impostorQuestion = dto.impostorQuestionDE;
+        break;
+      case 'fr':
+        originalQuestion = dto.originalQuestionFR;
+        impostorQuestion = dto.impostorQuestionFR;
+        break;
+      default:
+        originalQuestion = dto.originalQuestionEN;
+        impostorQuestion = dto.impostorQuestionEN;
+    }
     return Question(
-      id: json['id'] as int,
-      originalQuestion: json['originalQuestion'] as String,
-      impostorQuestion: json['impostorQuestion'] as String,
+      id: dto.id,
+      originalQuestion: originalQuestion,
+      impostorQuestion: impostorQuestion,
     );
   }
 }

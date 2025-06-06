@@ -14,7 +14,6 @@ class GameRoomModel {
   List<Question> questions = [];
 
   GameRoomModel(this.database) {
-    // Initialize the questions list if needed
     _getQuestionsFromFile();
   }
 
@@ -143,9 +142,9 @@ class GameRoomModel {
           return MapEntry(key, value);
         });
       }).toList();
-      final List<Question> questions =
-          formattedList.map((data) => Question.fromJson(data)).toList();
-      this.questions = questions;
+      final List<QuestionDTO> questions =
+          formattedList.map((data) => QuestionDTO.fromJson(data)).toList();
+      this.questions = questions.map((dto) => Question.fromDTO(dto)).toList();
     }
   }
 
