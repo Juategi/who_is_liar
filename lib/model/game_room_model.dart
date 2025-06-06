@@ -9,11 +9,11 @@ import 'dart:math' as math;
 import 'package:http/http.dart' as http;
 
 class GameRoomModel {
-  final database = FirebaseDatabase.instance;
+  FirebaseDatabase database;
   final NameModel nameModel = GetIt.instance.get<NameModel>();
   List<Question> questions = [];
 
-  GameRoomModel() {
+  GameRoomModel(this.database) {
     // Initialize the questions list if needed
     _getQuestionsFromFile();
   }

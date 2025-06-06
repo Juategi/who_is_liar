@@ -2,9 +2,6 @@
 TODO:
 
 Translations
-Tests
-
 Ads
 CICD
-
 Get questions
