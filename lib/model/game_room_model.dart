@@ -1,16 +1,22 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:who_is_liar/controller/game_room/game_room.dart';
 import 'package:who_is_liar/model/name_model.dart';
 import 'package:who_is_liar/utils/code_utils.dart';
 import 'dart:math' as math;
+import 'package:http/http.dart' as http;
 
 class GameRoomModel {
   final database = FirebaseDatabase.instance;
   final NameModel nameModel = GetIt.instance.get<NameModel>();
+  List<Question> questions = [];
+
+  GameRoomModel() {
+    // Initialize the questions list if needed
+    _getQuestionsFromFile();
+  }
 
   Future<String> createRoom() async {
     final String code = CodeUtils.generateRandomId(5);
@@ -56,12 +62,9 @@ class GameRoomModel {
 
   Future<void> loadNextQuestion(String code) async {
     // Load questions from a local JSON file
-    final String jsonString =
-        await rootBundle.loadString('assets/questions/questions.json');
-    final List<dynamic> jsonData = json.decode(jsonString);
-    final List<Question> questions = jsonData
-        .map((data) => Question.fromJson(data as Map<String, dynamic>))
-        .toList();
+    if (questions.isEmpty) {
+      await _getQuestionsFromFile();
+    }
 
     // Retrieve the current question from the database
     final DatabaseReference questionRef = database.ref('nodes/$code');
@@ -113,6 +116,36 @@ class GameRoomModel {
           'vote': '',
         });
       }
+    }
+  }
+
+  Future<void> _getQuestionsFromFile() async {
+    final fileId = '1z1c1B60OSsdI2N0K9ZNnvR_XpWl9U82p';
+    final url = 'https://drive.google.com/uc?export=download&id=$fileId';
+
+    final response = await http.get(Uri.parse(url));
+
+    if (response.statusCode == 200) {
+      final content = response.body;
+      // Decode JSON
+      final List<dynamic> data = json.decode(content);
+      // Convert to List<Map<String, dynamic>>
+      final List<Map<String, dynamic>> listOfMaps =
+          data.cast<Map<String, dynamic>>();
+      // Decode possible malformed UTF-8 strings
+      final formattedList = listOfMaps.map((map) {
+        return map.map((key, value) {
+          if (value is String) {
+            // Decode string to fix malformed UTF-8
+            final decoded = utf8.decode(latin1.encode(value));
+            return MapEntry(key, decoded);
+          }
+          return MapEntry(key, value);
+        });
+      }).toList();
+      final List<Question> questions =
+          formattedList.map((data) => Question.fromJson(data)).toList();
+      this.questions = questions;
     }
   }
 

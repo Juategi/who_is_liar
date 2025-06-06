@@ -43,6 +43,7 @@ dependencies:
   upgrader: ^11.4.0
   mockito: ^5.4.6
   rebirth: ^1.0.2
+  http: ^0.13.0
 
 dev_dependencies:
   flutter_test:
@@ -69,7 +70,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/questions/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

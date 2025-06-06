@@ -2,11 +2,8 @@
 TODO:
 
 Translations
-Move files to storage
 Get questions
-
 Ads
-
 Tests
 
 CICD
