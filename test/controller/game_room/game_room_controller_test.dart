@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:who_is_liar/controller/ad_controller.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
 import 'package:who_is_liar/model/game_room_model.dart';
 import 'package:who_is_liar/model/name_model.dart';
@@ -10,17 +11,26 @@ import 'package:mockito/annotations.dart';
 
 import 'game_room_controller_test.mocks.dart';
 
-@GenerateMocks([GameRoomModel, NameModel, DatabaseEvent, DataSnapshot])
+@GenerateMocks(
+    [GameRoomModel, NameModel, DatabaseEvent, DataSnapshot, AdController])
 void main() {
   late MockGameRoomModel mockGameRoomModel;
   late MockNameModel mockNameModel;
   late GameRoomController controller;
+  late MockAdController mockAdController;
 
   setUp(() {
     mockGameRoomModel = MockGameRoomModel();
     mockNameModel = MockNameModel();
+    mockAdController = MockAdController();
+
+    when(mockGameRoomModel.listenRoom(any))
+        .thenAnswer((_) => const Stream.empty());
+    when(mockGameRoomModel.createRoom()).thenAnswer((_) async => 'ROOM123');
+    when(mockGameRoomModel.joinRoom(any)).thenAnswer((_) async => true);
     when(mockNameModel.getId()).thenReturn('player1');
-    controller = GameRoomController(mockGameRoomModel, mockNameModel);
+    controller =
+        GameRoomController(mockGameRoomModel, mockNameModel, mockAdController);
   });
 
   test('createRoom calls createRoom and _listenRoom', () async {

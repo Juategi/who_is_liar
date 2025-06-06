@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:get_it/get_it.dart';
+import 'package:who_is_liar/controller/ad_controller.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
 import 'package:who_is_liar/model/game_room_model.dart';
 import 'package:who_is_liar/model/name_model.dart';
@@ -11,9 +12,10 @@ class Di {
     final nameModel = NameModel();
     await nameModel.init();
     final database = FirebaseDatabase.instance;
+    getIt.registerSingleton<AdController>(AdController());
     getIt.registerSingleton<NameModel>(nameModel);
     getIt.registerSingleton<GameRoomModel>(GameRoomModel(database));
-    getIt.registerSingleton<GameRoomController>(
-        GameRoomController(getIt<GameRoomModel>(), getIt<NameModel>()));
+    getIt.registerSingleton<GameRoomController>(GameRoomController(
+        getIt<GameRoomModel>(), getIt<NameModel>(), getIt<AdController>()));
   }
 }

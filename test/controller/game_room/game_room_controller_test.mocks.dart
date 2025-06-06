@@ -9,6 +9,7 @@ import 'package:firebase_database/firebase_database.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i8;
 import 'package:shared_preferences/shared_preferences.dart' as _i4;
+import 'package:who_is_liar/controller/ad_controller.dart' as _i9;
 import 'package:who_is_liar/controller/game_room/game_room.dart' as _i6;
 import 'package:who_is_liar/model/game_room_model.dart' as _i5;
 import 'package:who_is_liar/model/name_model.dart' as _i3;
@@ -111,6 +112,15 @@ class MockGameRoomModel extends _i1.Mock implements _i5.GameRoomModel {
         Invocation.getter(#questions),
         returnValue: <_i6.Question>[],
       ) as List<_i6.Question>);
+
+  @override
+  set database(_i2.FirebaseDatabase? _database) => super.noSuchMethod(
+        Invocation.setter(
+          #database,
+          _database,
+        ),
+        returnValueForMissingStub: null,
+      );
 
   @override
   set questions(List<_i6.Question>? _questions) => super.noSuchMethod(
@@ -399,4 +409,32 @@ class MockDataSnapshot extends _i1.Mock implements _i2.DataSnapshot {
           ),
         ),
       ) as _i2.DataSnapshot);
+}
+
+/// A class which mocks [AdController].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAdController extends _i1.Mock implements _i9.AdController {
+  MockAdController() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  String get adUnitId => (super.noSuchMethod(
+        Invocation.getter(#adUnitId),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#adUnitId),
+        ),
+      ) as String);
+
+  @override
+  _i7.Future<void> loadAd() => (super.noSuchMethod(
+        Invocation.method(
+          #loadAd,
+          [],
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
 }

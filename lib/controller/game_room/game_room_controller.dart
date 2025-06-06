@@ -2,18 +2,22 @@ import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:who_is_liar/controller/ad_controller.dart';
 import 'package:who_is_liar/controller/game_room/game_room.dart';
 import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/model/game_room_model.dart';
 import 'package:who_is_liar/model/name_model.dart';
+// ignore: depend_on_referenced_packages
 import 'package:collection/collection.dart';
 
 class GameRoomController extends Cubit<GameRoomState> {
-  GameRoomController(this.gameRoomModel, this.nameModel)
+  GameRoomController(this.gameRoomModel, this.nameModel, this.adController)
       : super(GameRoomLoading());
 
   final GameRoomModel gameRoomModel;
   final NameModel nameModel;
+  final AdController adController;
+  int numberOfQuestionsPlayed = 0;
   StreamSubscription<DatabaseEvent>? _subscription;
   String? playerVoted;
 
@@ -132,8 +136,13 @@ class GameRoomController extends Cubit<GameRoomState> {
 
   Future<void> loadNextQuestion(String code) async {
     try {
+      // Load ad every 2 questions played
+      if (numberOfQuestionsPlayed > 0 && numberOfQuestionsPlayed % 2 == 0) {
+        await adController.loadAd();
+      }
       await gameRoomModel.loadNextQuestion(code);
       playerVoted = null; // Reset playerVoted after loading next question
+      numberOfQuestionsPlayed++;
     } catch (e) {
       if (!isClosed) {
         emit(GameRoomError(message: 'failed_to_start_game'.tr(args: ['$e'])));
