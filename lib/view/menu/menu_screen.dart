@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:upgrader/upgrader.dart';
+import 'package:who_is_liar/controller/ad_controller.dart';
 import 'package:who_is_liar/model/name_model.dart';
 import 'package:who_is_liar/view/widgets/initial_tooltip.dart';
 import 'package:who_is_liar/view/widgets/menu_button.dart';
@@ -31,6 +32,17 @@ class MenuScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   spacing: 8,
                   children: [
+                    SizedBox(
+                      width: 150,
+                      child: MenuButton(
+                        text: 'TEST ADS',
+                        onPressed: () {
+                          AdController adController =
+                              GetIt.instance.get<AdController>();
+                          adController.loadAd();
+                        },
+                      ),
+                    ),
                     NameWidget(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

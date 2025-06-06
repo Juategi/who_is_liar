@@ -6,12 +6,13 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 class AdController {
   InterstitialAd? _interstitialAd;
 
-  // TODO: replace this test ad unit with your own ad unit.
-  final adUnitId = Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/1033173712'
-      : 'ca-app-pub-3940256099942544/4411468910';
-
   Future<void> loadAd() async {
+    final bool isDev = const String.fromEnvironment('ENV') == 'dev';
+    final adUnitId = isDev
+        ? Platform.isAndroid
+            ? 'ca-app-pub-3940256099942544/1033173712'
+            : 'ca-app-pub-3940256099942544/4411468910'
+        : 'ca-app-pub-8550647653356634~7419872127';
     await InterstitialAd.load(
       adUnitId: adUnitId,
       request: const AdRequest(),
