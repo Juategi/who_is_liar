@@ -7,7 +7,6 @@ Get questions
 
 Ads
 
-Voting and results screen
 Tests
 
 CICD
