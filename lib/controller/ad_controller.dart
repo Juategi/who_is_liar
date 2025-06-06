@@ -12,7 +12,7 @@ class AdController {
         ? Platform.isAndroid
             ? 'ca-app-pub-3940256099942544/1033173712'
             : 'ca-app-pub-3940256099942544/4411468910'
-        : 'ca-app-pub-8550647653356634~7419872127';
+        : 'ca-app-pub-8550647653356634/3500722699';
     await InterstitialAd.load(
       adUnitId: adUnitId,
       request: const AdRequest(),
