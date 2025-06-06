@@ -58,6 +58,7 @@ class GameRoom {
                 name: e.value['name'],
                 isHost: e.value['isHost'] as bool? ?? false,
                 answer: e.value['answer'] as String?,
+                vote: e.value['vote'] as String?,
               );
             }).toList()
           : [],
@@ -68,7 +69,6 @@ class GameRoom {
 class Player {
   String name;
   bool isHost;
-  bool isReady = false;
   String id;
   String? answer;
   String? vote;
@@ -77,7 +77,6 @@ class Player {
     required this.name,
     required this.id,
     this.isHost = false,
-    this.isReady = false,
     this.answer,
     this.vote,
   });

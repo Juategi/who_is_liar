@@ -6,6 +6,7 @@ import 'package:who_is_liar/model/name_model.dart';
 class Di {
   static Future<void> setup() async {
     final getIt = GetIt.instance;
+    await getIt.reset();
     final nameModel = NameModel();
     await nameModel.init();
     getIt.registerSingleton<NameModel>(nameModel);

@@ -26,8 +26,13 @@ class GameRoomModel {
     return code;
   }
 
-  Future<void> joinRoom(String code) async {
+  Future<bool> joinRoom(String code) async {
     final String id = nameModel.getId();
+    final DatabaseReference roomRef = database.ref('nodes/$code');
+    final DatabaseEvent roomEvent = await roomRef.once();
+    if (roomEvent.snapshot.value == null) {
+      return false;
+    }
     final DatabaseReference playersRef = database.ref('nodes/$code/players');
     final DatabaseEvent event = await playersRef.once();
     final players = event.snapshot.value as Map?;
@@ -35,12 +40,13 @@ class GameRoomModel {
     if (numberOfPlayers >= 8) {
       throw Exception('Room is full');
     } else {
-      database.ref('nodes/$code/players/$id').set({
+      database.ref('nodes/$code/players/$id').update({
         'name': nameModel.getName(),
         'isHost': false,
         'id': id,
       });
     }
+    return true;
   }
 
   Stream<DatabaseEvent> listenRoom(String code) {
@@ -104,6 +110,7 @@ class GameRoomModel {
       for (final playerId in playersData.keys) {
         await database.ref('nodes/$code/players/$playerId').update({
           'answer': '',
+          'vote': '',
         });
       }
     }
@@ -123,6 +130,14 @@ class GameRoomModel {
     final DatabaseReference questionRef = database.ref('nodes/$code');
     await questionRef.update({
       'show': true,
+    });
+  }
+
+  Future<void> sendVote(String code, String playerId) async {
+    final DatabaseReference answerRef =
+        database.ref('nodes/$code/players/${nameModel.getId()}');
+    await answerRef.update({
+      'vote': playerId,
     });
   }
 

@@ -5,6 +5,7 @@ import 'package:who_is_liar/controller/game_room/game_room.dart';
 import 'package:who_is_liar/controller/game_room/game_room_state.dart';
 import 'package:who_is_liar/model/game_room_model.dart';
 import 'package:who_is_liar/model/name_model.dart';
+import 'package:collection/collection.dart';
 
 class GameRoomController extends Cubit<GameRoomState> {
   GameRoomController(this.gameRoomModel, this.nameModel)
@@ -13,6 +14,7 @@ class GameRoomController extends Cubit<GameRoomState> {
   final GameRoomModel gameRoomModel;
   final NameModel nameModel;
   StreamSubscription<DatabaseEvent>? _subscription;
+  String? playerVoted;
 
   Future<void> createRoom() async {
     final String code = await gameRoomModel.createRoom();
@@ -21,8 +23,12 @@ class GameRoomController extends Cubit<GameRoomState> {
 
   Future<void> joinRoom(String code) async {
     try {
-      await gameRoomModel.joinRoom(code);
-      _listenRoom(code);
+      final exists = await gameRoomModel.joinRoom(code);
+      if (exists) {
+        _listenRoom(code);
+      } else {
+        emit(GameRoomError(message: 'Room does not exist or is full'));
+      }
     } catch (e) {
       if (!isClosed) {
         emit(GameRoomError(message: 'Failed to join room: $e'));
@@ -36,6 +42,13 @@ class GameRoomController extends Cubit<GameRoomState> {
       try {
         final data = event.snapshot.value as Map?;
         final gameRoom = GameRoom.fromMap(data!, code);
+        // Put the current player at the top of the list
+        gameRoom.players.sort((a, b) => a.id == nameModel.getId()
+            ? -1
+            : b.id == nameModel.getId()
+                ? 1
+                : a.name.compareTo(b.name));
+
         if (gameRoom.show == true) {
           emit(ShowAnswers(code: code, gameRoom: gameRoom));
           return;
@@ -56,7 +69,7 @@ class GameRoomController extends Cubit<GameRoomState> {
         }
       } catch (e) {
         if (!isClosed) {
-          emit(GameRoomError(message: 'No data room found'));
+          emit(GameRoomError(message: e.toString()));
         }
       }
     });
@@ -85,7 +98,7 @@ class GameRoomController extends Cubit<GameRoomState> {
     }
     if (state is RoomLoaded) {
       return gameRoom.players
-          .firstWhere((player) => player.id == nameModel.getId());
+          .firstWhereOrNull((player) => player.id == nameModel.getId());
     }
     return null;
   }
@@ -97,15 +110,28 @@ class GameRoomController extends Cubit<GameRoomState> {
     }
     if (state is RoomLoaded) {
       return gameRoom.players
-          .firstWhere((player) => player.id == gameRoom.impostor)
-          .name;
+              .firstWhereOrNull((player) => player.id == gameRoom.impostor)
+              ?.name ??
+          '';
     }
     return '';
+  }
+
+  int getTotalVotes(GameRoom? gameRoom, String playerId) {
+    final state = this.state;
+    if (gameRoom == null) {
+      return 0;
+    }
+    if (state is RoomLoaded) {
+      return gameRoom.players.where((player) => player.vote == playerId).length;
+    }
+    return 0;
   }
 
   Future<void> loadNextQuestion(String code) async {
     try {
       await gameRoomModel.loadNextQuestion(code);
+      playerVoted = null; // Reset playerVoted after loading next question
     } catch (e) {
       if (!isClosed) {
         emit(GameRoomError(message: 'Failed to start game: $e'));
@@ -123,6 +149,17 @@ class GameRoomController extends Cubit<GameRoomState> {
     }
   }
 
+  Future<void> sendVote(String code, String playerId) async {
+    try {
+      await gameRoomModel.sendVote(code, playerId);
+      playerVoted = playerId;
+    } catch (e) {
+      if (!isClosed) {
+        emit(GameRoomError(message: 'Failed to send vote: $e'));
+      }
+    }
+  }
+
   Future<void> showAnswers(String code) async {
     try {
       await gameRoomModel.showAnswers(code);
@@ -133,10 +170,13 @@ class GameRoomController extends Cubit<GameRoomState> {
     }
   }
 
-  void dispose() {
+  Future<void> dispose() async {
     String code = state is RoomLoaded ? (state as RoomLoaded).code : '';
-    _subscription?.cancel();
-    gameRoomModel.leaveGame(code);
+    emit(GameRoomLoading()); // Reset state
+    await _subscription?.cancel();
+    await gameRoomModel.leaveGame(code);
+    playerVoted = null; // Reset playerVoted on dispose
+    _subscription = null; // Clear subscription
     super.close();
   }
 }

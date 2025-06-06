@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rebirth/rebirth.dart';
+import 'package:who_is_liar/settings/di.dart';
 
 class Background extends StatelessWidget {
   const Background({super.key, required this.children});
@@ -24,11 +26,10 @@ class Background extends StatelessWidget {
               child: IconButton(
                 icon: const Icon(Icons.home, color: Colors.white),
                 iconSize: 28,
-                onPressed: () {
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                    '/',
-                    (Route<dynamic> route) => false,
-                  );
+                onPressed: () async {
+                  await Di.setup();
+                  // ignore: use_build_context_synchronously
+                  WidgetRebirth.createRebirth(context: context);
                 },
               ),
             ),
