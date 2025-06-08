@@ -420,15 +420,6 @@ class MockAdController extends _i1.Mock implements _i9.AdController {
   }
 
   @override
-  String get adUnitId => (super.noSuchMethod(
-        Invocation.getter(#adUnitId),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.getter(#adUnitId),
-        ),
-      ) as String);
-
-  @override
   _i7.Future<void> loadAd() => (super.noSuchMethod(
         Invocation.method(
           #loadAd,
