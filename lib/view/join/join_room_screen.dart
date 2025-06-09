@@ -51,6 +51,7 @@ class JoinRoomScreen extends StatelessWidget {
                     arguments: code.toUpperCase());
               },
             ),
+            const SizedBox(height: 100),
           ],
         ),
       ]),
