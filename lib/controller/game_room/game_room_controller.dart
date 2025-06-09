@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:who_is_liar/controller/ad_controller.dart';
 import 'package:who_is_liar/controller/game_room/game_room.dart';
@@ -17,7 +18,9 @@ class GameRoomController extends Cubit<GameRoomState> {
   final GameRoomModel gameRoomModel;
   final NameModel nameModel;
   final AdController adController;
+  final TextEditingController answerController = TextEditingController();
   int numberOfQuestionsPlayed = 0;
+  bool isFirstQuestionState = true;
   StreamSubscription<DatabaseEvent>? _subscription;
   String? playerVoted;
 
@@ -43,7 +46,7 @@ class GameRoomController extends Cubit<GameRoomState> {
 
   void _listenRoom(String code) {
     _subscription =
-        gameRoomModel.listenRoom(code).listen((DatabaseEvent event) {
+        gameRoomModel.listenRoom(code).listen((DatabaseEvent event) async {
       try {
         final data = event.snapshot.value as Map?;
         final gameRoom = GameRoom.fromMap(data!, code);
@@ -54,6 +57,8 @@ class GameRoomController extends Cubit<GameRoomState> {
                 ? 1
                 : a.name.compareTo(b.name));
         if (gameRoom.show == true) {
+          answerController.clear();
+          isFirstQuestionState = true;
           emit(ShowAnswers(code: code, gameRoom: gameRoom));
           return;
         } else if (gameRoom.currentQuestion != null) {
@@ -66,6 +71,16 @@ class GameRoomController extends Cubit<GameRoomState> {
               ),
             );
           } else {
+            // Load ad every 2 questions played
+            if (numberOfQuestionsPlayed > 0 &&
+                numberOfQuestionsPlayed % 2 == 0 &&
+                isFirstQuestionState) {
+              await adController.loadAd();
+            }
+            if (isFirstQuestionState) {
+              isFirstQuestionState = false;
+              numberOfQuestionsPlayed++;
+            }
             emit(QuestionGameLoaded(code: code, gameRoom: gameRoom));
           }
         } else {
@@ -135,13 +150,8 @@ class GameRoomController extends Cubit<GameRoomState> {
 
   Future<void> loadNextQuestion(String code) async {
     try {
-      // Load ad every 2 questions played
-      if (numberOfQuestionsPlayed > 0 && numberOfQuestionsPlayed % 2 == 0) {
-        await adController.loadAd();
-      }
       await gameRoomModel.loadNextQuestion(code);
       playerVoted = null; // Reset playerVoted after loading next question
-      numberOfQuestionsPlayed++;
     } catch (e) {
       if (!isClosed) {
         emit(GameRoomError(message: 'failed_to_start_game'.tr(args: ['$e'])));

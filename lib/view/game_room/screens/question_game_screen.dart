@@ -14,9 +14,9 @@ class QuestionGameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController answer = TextEditingController();
     final GameRoomController gameRoomController =
         BlocProvider.of<GameRoomController>(context);
+    final TextEditingController answer = gameRoomController.answerController;
     return Padding(
       padding: const EdgeInsets.all(30),
       child: Column(
@@ -75,6 +75,14 @@ class QuestionGameScreen extends StatelessWidget {
             child: MenuButton(
               text: 'submit'.tr(),
               onPressed: () {
+                if (answer.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('answer_required'.tr()),
+                    ),
+                  );
+                  return;
+                }
                 gameRoomController.sendAnswer(
                   state.code,
                   answer.text,

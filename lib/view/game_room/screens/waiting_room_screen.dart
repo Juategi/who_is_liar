@@ -31,6 +31,14 @@ class WaitingRoomScreen extends StatelessWidget {
               child: MenuButton(
                 text: 'start_game'.tr(),
                 onPressed: () {
+                  if ((state.gameRoom?.players.length ?? 0) <= 2) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('not_enough_players'.tr()),
+                      ),
+                    );
+                    //return;
+                  }
                   gameRoomController.loadNextQuestion(state.code);
                 },
               ),

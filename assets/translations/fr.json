@@ -29,5 +29,7 @@
     "not_impostor_tooltip": "Vous n'êtes pas l'imposteur ! Essayez de deviner qui est l'imposteur en vous basant sur les réponses données. Discutez entre vous pour le découvrir.",
     "impostor_tooltip": "Vous êtes l'imposteur ! Essayez de tromper les autres pour qu'ils pensent que vous avez répondu à la même question.",
     "impostor_question": "Votre question d'imposteur était : {}",
-    "game_maintenance": "Le jeu est actuellement en maintenance. Veuillez réessayer plus tard."
+    "game_maintenance": "Le jeu est actuellement en maintenance. Veuillez réessayer plus tard.",
+    "answer_required": "Une réponse est requise",
+    "not_enough_players": "Pas assez de joueurs pour démarrer la partie"
 }

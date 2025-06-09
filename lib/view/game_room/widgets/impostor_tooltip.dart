@@ -23,9 +23,10 @@ class ImpostorTooltip extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 'assets/images/mask.png',

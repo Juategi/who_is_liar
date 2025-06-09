@@ -29,5 +29,7 @@
     "not_impostor_tooltip": "Du bist nicht der Betrüger! Versuche herauszufinden, wer der Betrüger war, basierend auf den gegebenen Antworten. Diskutiere mit den anderen, um es herauszufinden.",
     "impostor_tooltip": "Du bist der Betrüger! Versuche, die anderen zu täuschen, indem du so tust, als hättest du die gleiche Frage beantwortet.",
     "impostor_question": "Deine Betrügerfrage war: {}",
-    "game_maintenance": "Das Spiel befindet sich derzeit in Wartung. Bitte versuche es später erneut."
+    "game_maintenance": "Das Spiel befindet sich derzeit in Wartung. Bitte versuche es später erneut.",
+    "answer_required": "Antwort ist erforderlich",
+    "not_enough_players": "Nicht genügend Spieler, um das Spiel zu starten"
 }
