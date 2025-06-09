@@ -35,6 +35,7 @@ class QuestionGameScreen extends StatelessWidget {
                     "no_question_available".tr(),
                 textStyle: AppStyles.secondary.copyWith(fontSize: 38),
                 textAlign: TextAlign.center,
+                speed: const Duration(seconds: 1),
               ),
             ],
           ),

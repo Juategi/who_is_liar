@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider<GameRoomController>(
       create: (_) => GetIt.instance<GameRoomController>(),
       child: MaterialApp(
-        title: 'Who is Liar',
+        title: 'Catch the Impostor!',
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,

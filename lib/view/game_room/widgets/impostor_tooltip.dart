@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
 import 'package:who_is_liar/settings/styles.dart';
 
@@ -28,15 +27,11 @@ class ImpostorTooltip extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset(
-                'assets/images/mask.svg',
+              Image.asset(
+                'assets/images/mask.png',
                 height: 80,
                 width: 80,
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.red[200]!,
-                  BlendMode.srcIn,
-                ),
               ),
               const SizedBox(width: 8),
               Expanded(

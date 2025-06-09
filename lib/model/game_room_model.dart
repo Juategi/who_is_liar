@@ -84,9 +84,9 @@ class GameRoomModel {
     }
 
     // Pick a random impostor from players
-    final players = (gameRoom?['players'] as Map?)?.values.toList() ?? [];
+    final players = (gameRoom?['players'] as Map?)?.keys.toList() ?? [];
     final impostorIndex = math.Random().nextInt(players.length);
-    final impostor = players[impostorIndex]['id'];
+    final impostor = players.elementAt(impostorIndex);
 
     // Update the database with the new current question and answered questions
     final Question nextQuestion = questions[randomIndex];
