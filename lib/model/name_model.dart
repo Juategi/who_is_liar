@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:who_is_liar/utils/code_utils.dart';
 
@@ -8,7 +9,8 @@ class NameModel {
 
   Future<void> init() async {
     prefs = await SharedPreferences.getInstance();
-    id = CodeUtils.generateRandomId(10);
+    final result = await FirebaseAuth.instance.signInAnonymously();
+    id = result.user?.uid ?? CodeUtils.generateRandomId(10);
   }
 
   String getName() {
