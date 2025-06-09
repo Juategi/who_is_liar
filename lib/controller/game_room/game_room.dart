@@ -56,7 +56,7 @@ class GameRoom {
       players: map['players'] != null
           ? (map['players'] as Map).entries.map((e) {
               return Player(
-                id: e.value['id'] as String,
+                id: e.key as String,
                 name: e.value['name'],
                 isHost: e.value['isHost'] as bool? ?? false,
                 answer: e.value['answer'] as String?,

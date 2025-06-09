@@ -53,7 +53,6 @@ class GameRoomController extends Cubit<GameRoomState> {
             : b.id == nameModel.getId()
                 ? 1
                 : a.name.compareTo(b.name));
-
         if (gameRoom.show == true) {
           emit(ShowAnswers(code: code, gameRoom: gameRoom));
           return;

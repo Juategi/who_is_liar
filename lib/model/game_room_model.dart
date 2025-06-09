@@ -26,7 +26,7 @@ class GameRoomModel {
     database.ref('nodes/$code/players/$id').set({
       'name': nameModel.getName(),
       'isHost': true,
-      'id': id,
+      //'id': id,
     });
     return code;
   }
@@ -48,7 +48,7 @@ class GameRoomModel {
       database.ref('nodes/$code/players/$id').update({
         'name': nameModel.getName(),
         'isHost': false,
-        'id': id,
+        //'id': id,
       });
     }
     return true;
