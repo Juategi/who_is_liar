@@ -24,6 +24,14 @@ class CustomTextField extends StatelessWidget {
       ),
       child: Center(
         child: TextField(
+          buildCounter: (
+            BuildContext context, {
+            required int currentLength,
+            required bool isFocused,
+            required int? maxLength,
+          }) {
+            return null;
+          },
           controller: textEditingController..text = value,
           decoration: InputDecoration(
             border: InputBorder.none,
@@ -38,6 +46,7 @@ class CustomTextField extends StatelessWidget {
             fontSize: 45,
             letterSpacing: 10,
           ),
+          maxLength: 20,
           onChanged: onChanged,
         ),
       ),

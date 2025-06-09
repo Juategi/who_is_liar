@@ -26,7 +26,6 @@ class GameRoomModel {
     database.ref('nodes/$code/players/$id').set({
       'name': nameModel.getName(),
       'isHost': true,
-      //'id': id,
     });
     return code;
   }
@@ -48,7 +47,6 @@ class GameRoomModel {
       database.ref('nodes/$code/players/$id').update({
         'name': nameModel.getName(),
         'isHost': false,
-        //'id': id,
       });
     }
     return true;
@@ -174,8 +172,8 @@ class GameRoomModel {
   }
 
   Future<void> leaveGame(String code) async {
-    final String id = nameModel.getId();
-    await database.ref('nodes/$code/players/$id').remove();
+    //final String id = nameModel.getId();
+    //await database.ref('nodes/$code/players/$id').remove();
     if (await _isLastPlayer(code)) {
       await database.ref('nodes/$code').remove();
     }

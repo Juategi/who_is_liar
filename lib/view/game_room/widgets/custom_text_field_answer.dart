@@ -14,6 +14,15 @@ class CustomTextFieldAnswer extends StatelessWidget {
       child: TextField(
         controller: controller,
         maxLines: 5,
+        maxLength: 150,
+        buildCounter: (
+          BuildContext context, {
+          required int currentLength,
+          required bool isFocused,
+          required int? maxLength,
+        }) {
+          return null;
+        },
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),

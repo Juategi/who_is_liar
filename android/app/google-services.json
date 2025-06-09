@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "1043914350877",
+    "firebase_url": "https://whosimpostor-7683a-default-rtdb.firebaseio.com",
     "project_id": "whosimpostor-7683a",
     "storage_bucket": "whosimpostor-7683a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1043914350877:android:add295ea546ab11acd01f4",
+        "mobilesdk_app_id": "1:1043914350877:android:3ec553c79aefd527cd01f4",
         "android_client_info": {
-          "package_name": "com.example.who_is_liar"
+          "package_name": "com.wt.who_is_liar"
         }
       },
       "oauth_client": [],
