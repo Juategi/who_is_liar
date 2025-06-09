@@ -7,6 +7,8 @@ class InitialTooltip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Align(
       alignment: Alignment.topCenter,
       child: Padding(
@@ -30,7 +32,8 @@ class InitialTooltip extends StatelessWidget {
                     return AlertDialog(
                       contentPadding: EdgeInsets.zero,
                       content: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.8,
+                        width: MediaQuery.of(context).size.width *
+                            (isLandscape ? 0.5 : 0.8),
                         child: Image.asset(
                           'assets/images/tooltip.png',
                           fit: BoxFit.cover,

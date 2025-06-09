@@ -13,18 +13,27 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final NameModel nameController = GetIt.instance.get<NameModel>();
+    final bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return UpgradeAlert(
       child: Scaffold(
         body: Stack(
           fit: StackFit.expand,
           children: [
-            Image.asset(
-              'assets/images/back2.png',
-              fit: BoxFit.cover,
+            Visibility(
+              visible: !isLandscape,
+              replacement: Image.asset(
+                'assets/images/color.png',
+                fit: BoxFit.cover,
+              ),
+              child: Image.asset(
+                'assets/images/back2.png',
+                fit: BoxFit.cover,
+              ),
             ),
             Image.asset(
               'assets/images/menum.png',
-              fit: BoxFit.fitWidth,
+              fit: isLandscape ? BoxFit.fitHeight : BoxFit.fitWidth,
             ),
             InitialTooltip(),
             Align(
@@ -40,7 +49,7 @@ class MenuScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SizedBox(
-                          width: 150,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           child: MenuButton(
                             text: 'create_game'.tr(),
                             onPressed: () {
@@ -57,7 +66,7 @@ class MenuScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          width: 150,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           child: MenuButton(
                             text: 'join_game'.tr(),
                             onPressed: () {
