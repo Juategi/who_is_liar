@@ -28,5 +28,6 @@
     "game_code": "Game Code",
     "not_impostor_tooltip": "You are not the imposter! Try to guess who was the imposter based on the answers given. Discuss with each other to find out.",
     "impostor_tooltip": "You are the impostor! Try to fool others into thinking you answered the same question.",
-    "impostor_question": "Your impostor question was: {}"
+    "impostor_question": "Your impostor question was: {}",
+    "game_maintenance": "The game is currently under maintenance. Please try again later."
 }

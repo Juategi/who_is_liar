@@ -28,5 +28,6 @@
     "game_code": "Código de la partida",
     "not_impostor_tooltip": "¡No eres el impostor! Intenta adivinar quién fue el impostor basándote en las respuestas dadas. Hablad entre vosotros para descubrirlo.",
     "impostor_tooltip": "¡Eres el impostor! Intenta engañar a los demás para que piensen que respondiste la misma pregunta.",
-    "impostor_question": "Tu pregunta de impostor fue: {}"
+    "impostor_question": "Tu pregunta de impostor fue: {}",
+    "game_maintenance": "El juego está en mantenimiento. Por favor, inténtalo de nuevo más tarde."
 }

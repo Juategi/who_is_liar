@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:who_is_liar/controller/game_room/game_room_controller.dart';
+import 'package:who_is_liar/controller/remote_config_controller.dart';
 
 import 'package:who_is_liar/settings/routes.dart';
 
@@ -21,7 +22,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: '/',
+        initialRoute:
+            GetIt.instance<RemoteConfigController>().isInMaintenanceMode()
+                ? '/down'
+                : '/',
         routes: AppRoutes.getRoutes(),
       ),
     );
