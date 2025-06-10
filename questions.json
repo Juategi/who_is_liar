@@ -5,10 +5,12 @@
     "originalQuestionEN": "Which fruit do you like the most?",
     "originalQuestionDE": "Welche Frucht magst du am liebsten?",
     "originalQuestionFR": "Quel fruit préfères-tu ?",
+    "originalQuestionPT": "Qual fruta você mais gosta?",
     "impostorQuestionES": "¿Qué verdura comes sin ganas?",
     "impostorQuestionEN": "Which vegetable do you eat without enthusiasm?",
     "impostorQuestionDE": "Welches Gemüse isst du ohne Lust?",
-    "impostorQuestionFR": "Quel légume manges-tu sans envie ?"
+    "impostorQuestionFR": "Quel légume manges-tu sans envie ?",
+    "impostorQuestionPT": "Qual vegetal você come sem vontade?"
   },
   {
     "id": 1,
@@ -16,10 +18,12 @@
     "originalQuestionEN": "What is your favorite movie?",
     "originalQuestionDE": "Was ist dein Lieblingsfilm?",
     "originalQuestionFR": "Quel est ton film préféré ?",
+    "originalQuestionPT": "Qual é o seu filme favorito?",
     "impostorQuestionES": "¿Cuál es la película que menos te gustó?",
     "impostorQuestionEN": "Which movie did you like the least?",
     "impostorQuestionDE": "Welcher Film hat dir am wenigsten gefallen?",
-    "impostorQuestionFR": "Quel est le film que tu as le moins aimé ?"
+    "impostorQuestionFR": "Quel est le film que tu as le moins aimé ?",
+    "impostorQuestionPT": "Qual foi o filme de que você menos gostou?"
   },
   {
     "id": 2,
@@ -27,10 +31,12 @@
     "originalQuestionEN": "Which animal would you like to have as a pet?",
     "originalQuestionDE": "Welches Tier hättest du gerne als Haustier?",
     "originalQuestionFR": "Quel animal aimerais-tu avoir comme animal de compagnie ?",
+    "originalQuestionPT": "Que animal você gostaria de ter como animal de estimação?",
     "impostorQuestionES": "¿Qué animal jamás tendrías como mascota?",
     "impostorQuestionEN": "Which animal would you never have as a pet?",
     "impostorQuestionDE": "Welches Tier würdest du niemals als Haustier haben?",
-    "impostorQuestionFR": "Quel animal ne voudrais-tu jamais comme animal de compagnie ?"
+    "impostorQuestionFR": "Quel animal ne voudrais-tu jamais comme animal de compagnie ?",
+    "impostorQuestionPT": "Que animal você nunca teria como animal de estimação?"
   },
   {
     "id": 3,
@@ -38,10 +44,12 @@
     "originalQuestionEN": "What food would you order on a first date?",
     "originalQuestionDE": "Welches Essen würdest du bei einem ersten Date bestellen?",
     "originalQuestionFR": "Quel plat commanderais-tu lors d'un premier rendez-vous ?",
+    "originalQuestionPT": "Que comida você pediria em um primeiro encontro?",
     "impostorQuestionES": "¿Qué comida pedirías si tuvieras resaca?",
     "impostorQuestionEN": "What food would you order if you had a hangover?",
     "impostorQuestionDE": "Welches Essen würdest du bestellen, wenn du einen Kater hättest?",
-    "impostorQuestionFR": "Quel plat commanderais-tu si tu avais la gueule de bois ?"
+    "impostorQuestionFR": "Quel plat commanderais-tu si tu avais la gueule de bois ?",
+    "impostorQuestionPT": "Que comida você pediria se estivesse de ressaca?"
   },
   {
     "id": 4,
@@ -49,10 +57,12 @@
     "originalQuestionEN": "What would you do if you won the lottery?",
     "originalQuestionDE": "Was würdest du tun, wenn du im Lotto gewinnen würdest?",
     "originalQuestionFR": "Que ferais-tu si tu gagnais à la loterie ?",
+    "originalQuestionPT": "O que você faria se ganhasse na loteria?",
     "impostorQuestionES": "¿Qué no harías ni con mucho dinero?",
     "impostorQuestionEN": "What wouldn't you do even with a lot of money?",
     "impostorQuestionDE": "Was würdest du nicht tun, selbst mit viel Geld?",
-    "impostorQuestionFR": "Qu'est-ce que tu ne ferais jamais, même avec beaucoup d'argent ?"
+    "impostorQuestionFR": "Qu'est-ce que tu ne ferais jamais, même avec beaucoup d'argent ?",
+    "impostorQuestionPT": "O que você não faria nem com muito dinheiro?"
   },
   {
     "id": 5,
@@ -60,10 +70,12 @@
     "originalQuestionEN": "What is your favorite series right now?",
     "originalQuestionDE": "Was ist derzeit deine Lieblingsserie?",
     "originalQuestionFR": "Quelle est ta série préférée en ce moment ?",
+    "originalQuestionPT": "Qual é sua série favorita atualmente?",
     "impostorQuestionES": "¿Cuál es la serie que no terminaste?",
     "impostorQuestionEN": "Which series did you not finish?",
     "impostorQuestionDE": "Welche Serie hast du nicht zu Ende geschaut?",
-    "impostorQuestionFR": "Quelle série n'as-tu pas terminée ?"
+    "impostorQuestionFR": "Quelle série n'as-tu pas terminée ?",
+    "impostorQuestionPT": "Qual série você não terminou?"
   },
   {
     "id": 6,
@@ -71,10 +83,12 @@
     "originalQuestionEN": "Which superpower would you like to have?",
     "originalQuestionDE": "Welche Superkraft hättest du gerne?",
     "originalQuestionFR": "Quel super-pouvoir aimerais-tu avoir ?",
+    "originalQuestionPT": "Qual superpoder você gostaria de ter?",
     "impostorQuestionES": "¿Qué superpoder te parece inútil?",
     "impostorQuestionEN": "Which superpower do you find useless?",
     "impostorQuestionDE": "Welche Superkraft findest du nutzlos?",
-    "impostorQuestionFR": "Quel super-pouvoir trouves-tu inutile ?"
+    "impostorQuestionFR": "Quel super-pouvoir trouves-tu inutile ?",
+    "impostorQuestionPT": "Qual superpoder você acha inútil?"
   },
   {
     "id": 7,
@@ -82,10 +96,12 @@
     "originalQuestionEN": "Which place in the world would you like to visit?",
     "originalQuestionDE": "Welchen Ort auf der Welt würdest du gerne besuchen?",
     "originalQuestionFR": "Quel endroit dans le monde aimerais-tu visiter ?",
+    "originalQuestionPT": "Que lugar do mundo você gostaria de visitar?",
     "impostorQuestionES": "¿Qué lugar no visitarías jamás?",
     "impostorQuestionEN": "Which place would you never visit?",
     "impostorQuestionDE": "Welchen Ort würdest du niemals besuchen?",
-    "impostorQuestionFR": "Quel endroit ne visiterais-tu jamais ?"
+    "impostorQuestionFR": "Quel endroit ne visiterais-tu jamais ?",
+    "impostorQuestionPT": "Que lugar você nunca visitaria?"
   },
   {
     "id": 8,
@@ -93,10 +109,12 @@
     "originalQuestionEN": "What is your favorite video game?",
     "originalQuestionDE": "Was ist dein Lieblingsvideospiel?",
     "originalQuestionFR": "Quel est ton jeu vidéo préféré ?",
+    "originalQuestionPT": "Qual é o seu videogame favorito?",
     "impostorQuestionES": "¿Cuál es el videojuego más aburrido para ti?",
     "impostorQuestionEN": "Which video game is the most boring for you?",
     "impostorQuestionDE": "Welches Videospiel findest du am langweiligsten?",
-    "impostorQuestionFR": "Quel est le jeu vidéo le plus ennuyeux pour toi ?"
+    "impostorQuestionFR": "Quel est le jeu vidéo le plus ennuyeux pour toi ?",
+    "impostorQuestionPT": "Qual videogame você acha mais chato?"
   },
   {
     "id": 9,
@@ -104,10 +122,12 @@
     "originalQuestionEN": "What would you do all day if you had no responsibilities?",
     "originalQuestionDE": "Was würdest du den ganzen Tag tun, wenn du keine Verpflichtungen hättest?",
     "originalQuestionFR": "Que ferais-tu toute une journée sans aucune responsabilité ?",
+    "originalQuestionPT": "O que você faria o dia todo se não tivesse responsabilidades?",
     "impostorQuestionES": "¿Qué no harías ni por apuesta?",
     "impostorQuestionEN": "What wouldn't you do even for a bet?",
     "impostorQuestionDE": "Was würdest du nicht einmal für eine Wette tun?",
-    "impostorQuestionFR": "Qu'est-ce que tu ne ferais même pas pour un pari ?"
+    "impostorQuestionFR": "Qu'est-ce que tu ne ferais même pas pour un pari ?",
+    "impostorQuestionPT": "O que você não faria nem por aposta?"
   },
   {
     "id": 10,
@@ -115,10 +135,12 @@
     "originalQuestionEN": "What was your favorite toy as a child?",
     "originalQuestionDE": "Was war dein Lieblingsspielzeug als Kind?",
     "originalQuestionFR": "Quel était ton jouet préféré quand tu étais enfant ?",
+    "originalQuestionPT": "Qual era o seu brinquedo favorito quando criança?",
     "impostorQuestionES": "¿Cuál fue el peor regalo que recibiste?",
     "impostorQuestionEN": "What was the worst gift you ever received?",
     "impostorQuestionDE": "Was war das schlechteste Geschenk, das du je bekommen hast?",
-    "impostorQuestionFR": "Quel a été le pire cadeau que tu aies reçu ?"
+    "impostorQuestionFR": "Quel a été le pire cadeau que tu aies reçu ?",
+    "impostorQuestionPT": "Qual foi o pior presente que você já recebeu?"
   },
   {
     "id": 11,
@@ -126,10 +148,12 @@
     "originalQuestionEN": "Which song could you listen to on repeat?",
     "originalQuestionDE": "Welches Lied könntest du in Dauerschleife hören?",
     "originalQuestionFR": "Quelle chanson pourrais-tu écouter en boucle ?",
+    "originalQuestionPT": "Qual música você poderia ouvir no repeat?",
     "impostorQuestionES": "¿Qué canción odias sin razón?",
     "impostorQuestionEN": "Which song do you hate for no reason?",
     "impostorQuestionDE": "Welches Lied hasst du ohne Grund?",
-    "impostorQuestionFR": "Quelle chanson détestes-tu sans raison ?"
+    "impostorQuestionFR": "Quelle chanson détestes-tu sans raison ?",
+    "impostorQuestionPT": "Qual música você odeia sem motivo?"
   },
   {
     "id": 12,
@@ -137,10 +161,12 @@
     "originalQuestionEN": "What is your favorite dessert?",
     "originalQuestionDE": "Was ist dein Lieblingsdessert?",
     "originalQuestionFR": "Quel est ton dessert préféré ?",
+    "originalQuestionPT": "Qual é a sua sobremesa favorita?",
     "impostorQuestionES": "¿Cuál es tu postre menos favorito?",
     "impostorQuestionEN": "What is your least favorite dessert?",
     "impostorQuestionDE": "Was ist dein am wenigsten beliebtes Dessert?",
-    "impostorQuestionFR": "Quel est ton dessert que tu aimes le moins ?"
+    "impostorQuestionFR": "Quel est ton dessert que tu aimes le moins ?",
+    "impostorQuestionPT": "Qual é a sobremesa de que você menos gosta?"
   },
   {
     "id": 13,
@@ -148,10 +174,12 @@
     "originalQuestionEN": "What would you do in a haunted house?",
     "originalQuestionDE": "Was würdest du in einem Spukhaus tun?",
     "originalQuestionFR": "Que ferais-tu dans une maison hantée ?",
+    "originalQuestionPT": "O que você faria em uma casa mal-assombrada?",
     "impostorQuestionES": "¿Qué harías si ves un fantasma?",
     "impostorQuestionEN": "What would you do if you saw a ghost?",
     "impostorQuestionDE": "Was würdest du tun, wenn du einen Geist siehst?",
-    "impostorQuestionFR": "Que ferais-tu si tu voyais un fantôme ?"
+    "impostorQuestionFR": "Que ferais-tu si tu voyais un fantôme ?",
+    "impostorQuestionPT": "O que você faria se visse um fantasma?"
   },
   {
     "id": 14,
@@ -159,10 +187,12 @@
     "originalQuestionEN": "What would you do if you were invisible for a day?",
     "originalQuestionDE": "Was würdest du tun, wenn du einen Tag lang unsichtbar wärst?",
     "originalQuestionFR": "Que ferais-tu si tu étais invisible pendant une journée ?",
+    "originalQuestionPT": "O que você faria se fosse invisível por um dia?",
     "impostorQuestionES": "¿Qué harías si nadie te pudiera ver?",
     "impostorQuestionEN": "What would you do if no one could see you?",
     "impostorQuestionDE": "Was würdest du tun, wenn dich niemand sehen könnte?",
-    "impostorQuestionFR": "Que ferais-tu si personne ne pouvait te voir ?"
+    "impostorQuestionFR": "Que ferais-tu si personne ne pouvait te voir ?",
+    "impostorQuestionPT": "O que você faria se ninguém pudesse te ver?"
   },
   {
     "id": 15,
@@ -170,10 +200,12 @@
     "originalQuestionEN": "What is your favorite social network?",
     "originalQuestionDE": "Was ist dein Lieblingssoziales Netzwerk?",
     "originalQuestionFR": "Quel est ton réseau social préféré ?",
+    "originalQuestionPT": "Qual é sua rede social favorita?",
     "impostorQuestionES": "¿Qué red social te parece innecesaria?",
     "impostorQuestionEN": "Which social network do you find unnecessary?",
     "impostorQuestionDE": "Welches soziale Netzwerk findest du unnötig?",
-    "impostorQuestionFR": "Quel réseau social trouves-tu inutile ?"
+    "impostorQuestionFR": "Quel réseau social trouves-tu inutile ?",
+    "impostorQuestionPT": "Qual rede social você acha desnecessária?"
   },
   {
     "id": 16,
@@ -181,10 +213,12 @@
     "originalQuestionEN": "Which emoji do you use the most?",
     "originalQuestionDE": "Welches Emoji benutzt du am meisten?",
     "originalQuestionFR": "Quel emoji utilises-tu le plus ?",
+    "originalQuestionPT": "Qual emoji você mais usa?",
     "impostorQuestionES": "¿Qué emoji nunca usas?",
     "impostorQuestionEN": "Which emoji do you never use?",
     "impostorQuestionDE": "Welches Emoji benutzt du nie?",
-    "impostorQuestionFR": "Quel emoji n'utilises-tu jamais ?"
+    "impostorQuestionFR": "Quel emoji n'utilises-tu jamais ?",
+    "impostorQuestionPT": "Qual emoji você nunca usa?"
   },
   {
     "id": 17,
@@ -192,10 +226,12 @@
     "originalQuestionEN": "What do you do first when you wake up?",
     "originalQuestionDE": "Was machst du als Erstes, wenn du aufwachst?",
     "originalQuestionFR": "Que fais-tu en premier quand tu te lèves ?",
+    "originalQuestionPT": "O que você faz primeiro ao acordar?",
     "impostorQuestionES": "¿Qué haces justo antes de dormir?",
     "impostorQuestionEN": "What do you do right before sleeping?",
     "impostorQuestionDE": "Was machst du direkt vor dem Schlafengehen?",
-    "impostorQuestionFR": "Que fais-tu juste avant de dormir ?"
+    "impostorQuestionFR": "Que fais-tu juste avant de dormir ?",
+    "impostorQuestionPT": "O que você faz logo antes de dormir?"
   },
   {
     "id": 18,
@@ -203,10 +239,12 @@
     "originalQuestionEN": "What is your favorite ice cream flavor?",
     "originalQuestionDE": "Was ist deine Lieblingseissorte?",
     "originalQuestionFR": "Quelle est ta saveur de glace préférée ?",
+    "originalQuestionPT": "Qual é o seu sabor de sorvete favorito?",
     "impostorQuestionES": "¿Cuál es el sabor de helado más raro que probaste?",
     "impostorQuestionEN": "What is the weirdest ice cream flavor you have tried?",
     "impostorQuestionDE": "Was ist die seltsamste Eissorte, die du probiert hast?",
-    "impostorQuestionFR": "Quelle est la saveur de glace la plus étrange que tu aies goûtée ?"
+    "impostorQuestionFR": "Quelle est la saveur de glace la plus étrange que tu aies goûtée ?",
+    "impostorQuestionPT": "Qual foi o sabor de sorvete mais estranho que você já provou?"
   },
   {
     "id": 19,
@@ -214,10 +252,12 @@
     "originalQuestionEN": "Which app do you use the most on your phone?",
     "originalQuestionDE": "Welche App benutzt du am meisten auf deinem Handy?",
     "originalQuestionFR": "Quelle application utilises-tu le plus sur ton téléphone ?",
+    "originalQuestionPT": "Qual aplicativo você mais usa no seu celular?",
     "impostorQuestionES": "¿Qué app te parece inútil?",
     "impostorQuestionEN": "Which app do you find useless?",
     "impostorQuestionDE": "Welche App findest du nutzlos?",
-    "impostorQuestionFR": "Quelle application trouves-tu inutile ?"
+    "impostorQuestionFR": "Quelle application trouves-tu inutile ?",
+    "impostorQuestionPT": "Qual aplicativo você acha inútil?"
   },
   {
     "id": 20,
@@ -225,10 +265,12 @@
     "originalQuestionEN": "Who is your favorite actor or actress?",
     "originalQuestionDE": "Wer ist dein Lieblingsschauspieler oder deine Lieblingsschauspielerin?",
     "originalQuestionFR": "Quel est ton acteur ou actrice préféré(e) ?",
+    "originalQuestionPT": "Quem é seu ator ou atriz favorito?",
     "impostorQuestionES": "¿Qué actor o actriz no te gusta?",
     "impostorQuestionEN": "Which actor or actress do you not like?",
     "impostorQuestionDE": "Welcher Schauspieler oder welche Schauspielerin gefällt dir nicht?",
-    "impostorQuestionFR": "Quel acteur ou actrice n'aimes-tu pas ?"
+    "impostorQuestionFR": "Quel acteur ou actrice n'aimes-tu pas ?",
+    "impostorQuestionPT": "Qual ator ou atriz você não gosta?"
   },
   {
     "id": 21,
@@ -236,10 +278,12 @@
     "originalQuestionEN": "Which sport do you like to watch?",
     "originalQuestionDE": "Welche Sportart schaust du gerne?",
     "originalQuestionFR": "Quel sport aimes-tu regarder ?",
+    "originalQuestionPT": "Qual esporte você gosta de assistir?",
     "impostorQuestionES": "¿Qué deporte te aburre?",
     "impostorQuestionEN": "Which sport bores you?",
     "impostorQuestionDE": "Welche Sportart langweilt dich?",
-    "impostorQuestionFR": "Quel sport t'ennuie ?"
+    "impostorQuestionFR": "Quel sport t'ennuie ?",
+    "impostorQuestionPT": "Qual esporte te entedia?"
   },
   {
     "id": 22,
@@ -247,10 +291,12 @@
     "originalQuestionEN": "Which animal represents you best?",
     "originalQuestionDE": "Welches Tier repräsentiert dich am besten?",
     "originalQuestionFR": "Quel animal te représente le mieux ?",
+    "originalQuestionPT": "Que animal te representa melhor?",
     "impostorQuestionES": "¿Qué animal te da miedo?",
     "impostorQuestionEN": "Which animal scares you?",
     "impostorQuestionDE": "Vor welchem Tier hast du Angst?",
-    "impostorQuestionFR": "Quel animal te fait peur ?"
+    "impostorQuestionFR": "Quel animal te fait peur ?",
+    "impostorQuestionPT": "Que animal te assusta?"
   },
   {
     "id": 23,
@@ -258,10 +304,12 @@
     "originalQuestionEN": "What was your worst punishment as a child?",
     "originalQuestionDE": "Was war deine schlimmste Strafe als Kind?",
     "originalQuestionFR": "Quelle a été ta pire punition enfant ?",
+    "originalQuestionPT": "Qual foi o seu pior castigo quando criança?",
     "impostorQuestionES": "¿Qué castigo recuerdas como injusto?",
     "impostorQuestionEN": "Which punishment do you remember as unfair?",
     "impostorQuestionDE": "Welche Strafe erinnerst du als ungerecht?",
-    "impostorQuestionFR": "Quelle punition te semblait injuste ?"
+    "impostorQuestionFR": "Quelle punition te semblait injuste ?",
+    "impostorQuestionPT": "Qual castigo você lembra como injusto?"
   },
   {
     "id": 24,
@@ -269,10 +317,12 @@
     "originalQuestionEN": "What would you do if you found a wallet full of money?",
     "originalQuestionDE": "Was würdest du tun, wenn du eine Brieftasche voller Geld finden würdest?",
     "originalQuestionFR": "Que ferais-tu si tu trouvais un portefeuille plein d'argent ?",
+    "originalQuestionPT": "O que você faria se encontrasse uma carteira cheia de dinheiro?",
     "impostorQuestionES": "¿Qué harías si encontraras algo ilegal?",
     "impostorQuestionEN": "What would you do if you found something illegal?",
     "impostorQuestionDE": "Was würdest du tun, wenn du etwas Illegales finden würdest?",
-    "impostorQuestionFR": "Que ferais-tu si tu trouvais quelque chose d'illégal ?"
+    "impostorQuestionFR": "Que ferais-tu si tu trouvais quelque chose d'illégal ?",
+    "impostorQuestionPT": "O que você faria se encontrasse algo ilegal?"
   },
   {
     "id": 25,
@@ -280,10 +330,12 @@
     "originalQuestionEN": "What was the most fun trip you've ever taken?",
     "originalQuestionDE": "Was war die lustigste Reise, die du gemacht hast?",
     "originalQuestionFR": "Quel a été le voyage le plus amusant que tu aies fait ?",
+    "originalQuestionPT": "Qual foi a viagem mais divertida que você já fez?",
     "impostorQuestionES": "¿Cuál fue el viaje más aburrido que has hecho?",
     "impostorQuestionEN": "What was the most boring trip you've ever taken?",
     "impostorQuestionDE": "Was war die langweiligste Reise, die du gemacht hast?",
-    "impostorQuestionFR": "Quel a été le voyage le plus ennuyeux que tu aies fait ?"
+    "impostorQuestionFR": "Quel a été le voyage le plus ennuyeux que tu aies fait ?",
+    "impostorQuestionPT": "Qual foi a viagem mais chata que você já fez?"
   },
   {
     "id": 26,
@@ -291,10 +343,12 @@
     "originalQuestionEN": "What would you do if you had to sing karaoke?",
     "originalQuestionDE": "Was würdest du tun, wenn du Karaoke singen müsstest?",
     "originalQuestionFR": "Que ferais-tu si tu devais chanter au karaoké ?",
+    "originalQuestionPT": "O que você faria se tivesse que cantar no karaokê?",
     "impostorQuestionES": "¿Qué harías si te obligan a cantar en público?",
     "impostorQuestionEN": "What would you do if you were forced to sing in public?",
     "impostorQuestionDE": "Was würdest du tun, wenn du gezwungen wärst, öffentlich zu singen?",
-    "impostorQuestionFR": "Que ferais-tu si tu étais obligé de chanter en public ?"
+    "impostorQuestionFR": "Que ferais-tu si tu étais obligé de chanter en public ?",
+    "impostorQuestionPT": "O que você faria se fosse obrigado a cantar em público?"
   },
   {
     "id": 27,
@@ -302,10 +356,12 @@
     "originalQuestionEN": "What would you do if you met a celebrity?",
     "originalQuestionDE": "Was würdest du tun, wenn du einen Prominenten triffst?",
     "originalQuestionFR": "Que ferais-tu si tu rencontrais une célébrité ?",
+    "originalQuestionPT": "O que você faria se encontrasse uma celebridade?",
     "impostorQuestionES": "¿Qué harías si te confunden con un famoso?",
     "impostorQuestionEN": "What would you do if you were mistaken for a celebrity?",
     "impostorQuestionDE": "Was würdest du tun, wenn man dich mit einem Prominenten verwechselt?",
-    "impostorQuestionFR": "Que ferais-tu si on te confondait avec une célébrité ?"
+    "impostorQuestionFR": "Que ferais-tu si on te confondait avec une célébrité ?",
+    "impostorQuestionPT": "O que você faria se te confundissem com uma celebridade?"
   },
   {
     "id": 28,
@@ -313,10 +369,12 @@
     "originalQuestionEN": "What color would you use to paint your room?",
     "originalQuestionDE": "Welche Farbe würdest du wählen, um dein Zimmer zu streichen?",
     "originalQuestionFR": "Quelle couleur utiliserais-tu pour peindre ta chambre ?",
+    "originalQuestionPT": "Que cor você usaria para pintar seu quarto?",
     "impostorQuestionES": "¿Qué color nunca usarías para tu casa?",
     "impostorQuestionEN": "Which color would you never use for your house?",
     "impostorQuestionDE": "Welche Farbe würdest du niemals für dein Haus verwenden?",
-    "impostorQuestionFR": "Quelle couleur n'utiliserais-tu jamais pour ta maison ?"
+    "impostorQuestionFR": "Quelle couleur n'utiliserais-tu jamais pour ta maison ?",
+    "impostorQuestionPT": "Que cor você nunca usaria na sua casa?"
   },
   {
     "id": 29,
@@ -324,10 +382,12 @@
     "originalQuestionEN": "What is your favorite pizza topping?",
     "originalQuestionDE": "Was ist dein Lieblingsbelag auf Pizza?",
     "originalQuestionFR": "Quelle est ta garniture de pizza préférée ?",
+    "originalQuestionPT": "Qual é sua cobertura de pizza favorita?",
     "impostorQuestionES": "¿Qué ingrediente te arruina la pizza?",
     "impostorQuestionEN": "Which ingredient ruins pizza for you?",
     "impostorQuestionDE": "Welcher Belag verdirbt dir die Pizza?",
-    "impostorQuestionFR": "Quel ingrédient gâche la pizza pour toi ?"
+    "impostorQuestionFR": "Quel ingrédient gâche la pizza pour toi ?",
+    "impostorQuestionPT": "Qual ingrediente estraga a pizza para você?"
   },
   {
     "id": 30,
@@ -335,10 +395,12 @@
     "originalQuestionEN": "What is your favorite holiday?",
     "originalQuestionDE": "Was ist dein Lieblingsfest?",
     "originalQuestionFR": "Quelle est ta fête préférée ?",
+    "originalQuestionPT": "Qual é o seu feriado favorito?",
     "impostorQuestionES": "¿Qué festividad no celebras nunca?",
     "impostorQuestionEN": "Which holiday do you never celebrate?",
     "impostorQuestionDE": "Welches Fest feierst du nie?",
-    "impostorQuestionFR": "Quelle fête ne célèbres-tu jamais ?"
+    "impostorQuestionFR": "Quelle fête ne célèbres-tu jamais ?",
+    "impostorQuestionPT": "Qual feriado você nunca comemora?"
   },
   {
     "id": 31,
@@ -346,10 +408,12 @@
     "originalQuestionEN": "What makes you laugh the most lately?",
     "originalQuestionDE": "Was bringt dich in letzter Zeit am meisten zum Lachen?",
     "originalQuestionFR": "Qu'est-ce qui te fait le plus rire ces derniers temps ?",
+    "originalQuestionPT": "O que tem te feito rir mais ultimamente?",
     "impostorQuestionES": "¿Qué chiste te parece muy malo?",
     "impostorQuestionEN": "Which joke do you find really bad?",
     "impostorQuestionDE": "Welchen Witz findest du richtig schlecht?",
-    "impostorQuestionFR": "Quelle blague trouves-tu vraiment nulle ?"
+    "impostorQuestionFR": "Quelle blague trouves-tu vraiment nulle ?",
+    "impostorQuestionPT": "Qual piada você acha muito ruim?"
   },
   {
     "id": 32,
@@ -357,10 +421,12 @@
     "originalQuestionEN": "What would you do on your ideal day?",
     "originalQuestionDE": "Was würdest du an deinem idealen Tag tun?",
     "originalQuestionFR": "Que ferais-tu lors de ta journée idéale ?",
+    "originalQuestionPT": "O que você faria no seu dia ideal?",
     "impostorQuestionES": "¿Qué harías en tu peor día?",
     "impostorQuestionEN": "What would you do on your worst day?",
     "impostorQuestionDE": "Was würdest du an deinem schlimmsten Tag tun?",
-    "impostorQuestionFR": "Que ferais-tu lors de ta pire journée ?"
+    "impostorQuestionFR": "Que ferais-tu lors de ta pire journée ?",
+    "impostorQuestionPT": "O que você faria no seu pior dia?"
   },
   {
     "id": 33,
@@ -368,10 +434,12 @@
     "originalQuestionEN": "Which fictional character would you like to be?",
     "originalQuestionDE": "Welche fiktive Figur wärst du gerne?",
     "originalQuestionFR": "Quel personnage de fiction aimerais-tu être ?",
+    "originalQuestionPT": "Que personagem de ficção você gostaria de ser?",
     "impostorQuestionES": "¿Qué personaje te parece insoportable?",
     "impostorQuestionEN": "Which character do you find unbearable?",
     "impostorQuestionDE": "Welche Figur findest du unerträglich?",
-    "impostorQuestionFR": "Quel personnage trouves-tu insupportable ?"
+    "impostorQuestionFR": "Quel personnage trouves-tu insupportable ?",
+    "impostorQuestionPT": "Que personagem você acha insuportável?"
   },
   {
     "id": 34,
@@ -379,10 +447,12 @@
     "originalQuestionEN": "What do you do when you're bored?",
     "originalQuestionDE": "Was machst du, wenn dir langweilig ist?",
     "originalQuestionFR": "Que fais-tu quand tu t'ennuies ?",
+    "originalQuestionPT": "O que você faz quando está entediado?",
     "impostorQuestionES": "¿Qué haces cuando no tienes internet?",
     "impostorQuestionEN": "What do you do when you don't have internet?",
     "impostorQuestionDE": "Was machst du, wenn du kein Internet hast?",
-    "impostorQuestionFR": "Que fais-tu quand tu n'as pas internet ?"
+    "impostorQuestionFR": "Que fais-tu quand tu n'as pas internet ?",
+    "impostorQuestionPT": "O que você faz quando está sem internet?"
   },
   {
     "id": 35,
@@ -390,10 +460,12 @@
     "originalQuestionEN": "What is your favorite animated movie?",
     "originalQuestionDE": "Was ist dein Lieblingsanimationsfilm?",
     "originalQuestionFR": "Quel est ton film d'animation préféré ?",
+    "originalQuestionPT": "Qual é o seu filme de animação favorito?",
     "impostorQuestionES": "¿Cuál es tu película animada menos favorita?",
     "impostorQuestionEN": "What is your least favorite animated movie?",
     "impostorQuestionDE": "Welcher Animationsfilm gefällt dir am wenigsten?",
-    "impostorQuestionFR": "Quel est ton film d'animation que tu aimes le moins ?"
+    "impostorQuestionFR": "Quel est ton film d'animation que tu aimes le moins ?",
+    "impostorQuestionPT": "Qual é o filme de animação de que você menos gosta?"
   },
   {
     "id": 36,
@@ -401,10 +473,12 @@
     "originalQuestionEN": "What is your favorite retro video game?",
     "originalQuestionDE": "Was ist dein Lieblings-Retro-Videospiel?",
     "originalQuestionFR": "Quel est ton jeu vidéo rétro préféré ?",
+    "originalQuestionPT": "Qual é o seu videogame retrô favorito?",
     "impostorQuestionES": "¿Qué videojuego viejo te parecía difícil?",
     "impostorQuestionEN": "Which old video game did you find difficult?",
     "impostorQuestionDE": "Welches alte Videospiel fandest du schwierig?",
-    "impostorQuestionFR": "Quel vieux jeu vidéo trouvais-tu difficile ?"
+    "impostorQuestionFR": "Quel vieux jeu vidéo trouvais-tu difficile ?",
+    "impostorQuestionPT": "Qual videogame antigo você achava difícil?"
   },
   {
     "id": 37,
@@ -412,10 +486,12 @@
     "originalQuestionEN": "What would you do if you woke up a millionaire?",
     "originalQuestionDE": "Was würdest du tun, wenn du als Millionär aufwachst?",
     "originalQuestionFR": "Que ferais-tu si tu te réveillais millionnaire ?",
+    "originalQuestionPT": "O que você faria se acordasse milionário?",
     "impostorQuestionES": "¿Qué harías si pierdes todo tu dinero?",
     "impostorQuestionEN": "What would you do if you lost all your money?",
     "impostorQuestionDE": "Was würdest du tun, wenn du all dein Geld verlierst?",
-    "impostorQuestionFR": "Que ferais-tu si tu perdais tout ton argent ?"
+    "impostorQuestionFR": "Que ferais-tu si tu perdais tout ton argent ?",
+    "impostorQuestionPT": "O que você faria se perdesse todo o seu dinheiro?"
   },
   {
     "id": 38,
@@ -423,10 +499,12 @@
     "originalQuestionEN": "Which smell do you like the most?",
     "originalQuestionDE": "Welchen Geruch magst du am liebsten?",
     "originalQuestionFR": "Quelle odeur préfères-tu ?",
+    "originalQuestionPT": "Qual cheiro você mais gosta?",
     "impostorQuestionES": "¿Qué olor te molesta mucho?",
     "impostorQuestionEN": "Which smell bothers you a lot?",
     "impostorQuestionDE": "Welcher Geruch stört dich sehr?",
-    "impostorQuestionFR": "Quelle odeur te dérange beaucoup ?"
+    "impostorQuestionFR": "Quelle odeur te dérange beaucoup ?",
+    "impostorQuestionPT": "Qual cheiro te incomoda muito?"
   },
   {
     "id": 39,
@@ -434,10 +512,12 @@
     "originalQuestionEN": "What would you do in a zombie apocalypse?",
     "originalQuestionDE": "Was würdest du in einer Zombie-Apokalypse tun?",
     "originalQuestionFR": "Que ferais-tu lors d'une apocalypse zombie ?",
+    "originalQuestionPT": "O que você faria em um apocalipse zumbi?",
     "impostorQuestionES": "¿Qué harías si tus amigos desaparecen?",
     "impostorQuestionEN": "What would you do if your friends disappeared?",
     "impostorQuestionDE": "Was würdest du tun, wenn deine Freunde verschwinden?",
-    "impostorQuestionFR": "Que ferais-tu si tes amis disparaissaient ?"
+    "impostorQuestionFR": "Que ferais-tu si tes amis disparaissaient ?",
+    "impostorQuestionPT": "O que você faria se seus amigos desaparecessem?"
   },
   {
     "id": 40,
@@ -445,10 +525,12 @@
     "originalQuestionEN": "What food can't be missing at a party?",
     "originalQuestionDE": "Welches Essen darf auf einer Party nicht fehlen?",
     "originalQuestionFR": "Quel plat ne peut pas manquer à une fête ?",
+    "originalQuestionPT": "Qual comida não pode faltar em uma festa?",
     "impostorQuestionES": "¿Qué comida no entiendes por qué gusta?",
     "impostorQuestionEN": "Which food do you not understand why people like?",
     "impostorQuestionDE": "Welches Essen verstehst du nicht, warum es gemocht wird?",
-    "impostorQuestionFR": "Quel plat ne comprends-tu pas pourquoi il plaît ?"
+    "impostorQuestionFR": "Quel plat ne comprends-tu pas pourquoi il plaît ?",
+    "impostorQuestionPT": "Qual comida você não entende por que as pessoas gostam?"
   },
   {
     "id": 41,
@@ -456,10 +538,12 @@
     "originalQuestionEN": "What would you do if you were president for a day?",
     "originalQuestionDE": "Was würdest du tun, wenn du einen Tag lang Präsident wärst?",
     "originalQuestionFR": "Que ferais-tu si tu étais président(e) pour un jour ?",
+    "originalQuestionPT": "O que você faria se fosse presidente por um dia?",
     "impostorQuestionES": "¿Qué decisión cambiarías de un presidente?",
     "impostorQuestionEN": "Which decision of a president would you change?",
     "impostorQuestionDE": "Welche Entscheidung eines Präsidenten würdest du ändern?",
-    "impostorQuestionFR": "Quelle décision d'un président changerais-tu ?"
+    "impostorQuestionFR": "Quelle décision d'un président changerais-tu ?",
+    "impostorQuestionPT": "Qual decisão de um presidente você mudaria?"
   },
   {
     "id": 42,
@@ -467,10 +551,12 @@
     "originalQuestionEN": "Which musical instrument would you like to play?",
     "originalQuestionDE": "Welches Musikinstrument würdest du gerne spielen?",
     "originalQuestionFR": "Quel instrument de musique aimerais-tu jouer ?",
+    "originalQuestionPT": "Qual instrumento musical você gostaria de tocar?",
     "impostorQuestionES": "¿Qué instrumento odias escuchar?",
     "impostorQuestionEN": "Which instrument do you hate to hear?",
     "impostorQuestionDE": "Welches Instrument kannst du nicht hören?",
-    "impostorQuestionFR": "Quel instrument détestes-tu entendre ?"
+    "impostorQuestionFR": "Quel instrument détestes-tu entendre ?",
+    "impostorQuestionPT": "Qual instrumento você odeia ouvir?"
   },
   {
     "id": 43,
@@ -478,10 +564,12 @@
     "originalQuestionEN": "What would you do on the moon?",
     "originalQuestionDE": "Was würdest du auf dem Mond tun?",
     "originalQuestionFR": "Que ferais-tu sur la lune ?",
+    "originalQuestionPT": "O que você faria na lua?",
     "impostorQuestionES": "¿Qué harías si no pudieras volver a la Tierra?",
     "impostorQuestionEN": "What would you do if you couldn't return to Earth?",
     "impostorQuestionDE": "Was würdest du tun, wenn du nicht zur Erde zurückkehren könntest?",
-    "impostorQuestionFR": "Que ferais-tu si tu ne pouvais pas revenir sur Terre ?"
+    "impostorQuestionFR": "Que ferais-tu si tu ne pouvais pas revenir sur Terre ?",
+    "impostorQuestionPT": "O que você faria se não pudesse voltar para a Terra?"
   },
   {
     "id": 44,
@@ -489,10 +577,12 @@
     "originalQuestionEN": "What would you do if you were a cat?",
     "originalQuestionDE": "Was würdest du tun, wenn du eine Katze wärst?",
     "originalQuestionFR": "Que ferais-tu si tu étais un chat ?",
+    "originalQuestionPT": "O que você faria se fosse um gato?",
     "impostorQuestionES": "¿Qué harías si fueras un perro?",
     "impostorQuestionEN": "What would you do if you were a dog?",
     "impostorQuestionDE": "Was würdest du tun, wenn du ein Hund wärst?",
-    "impostorQuestionFR": "Que ferais-tu si tu étais un chien ?"
+    "impostorQuestionFR": "Que ferais-tu si tu étais un chien ?",
+    "impostorQuestionPT": "O que você faria se fosse um cachorro?"
   },
   {
     "id": 45,
@@ -500,10 +590,12 @@
     "originalQuestionEN": "What type of weather do you like the most?",
     "originalQuestionDE": "Welches Wetter magst du am liebsten?",
     "originalQuestionFR": "Quel type de climat préfères-tu ?",
+    "originalQuestionPT": "Que tipo de clima você mais gosta?",
     "impostorQuestionES": "¿Qué tipo de clima te pone de mal humor?",
     "impostorQuestionEN": "What type of weather puts you in a bad mood?",
     "impostorQuestionDE": "Welches Wetter macht dir schlechte Laune?",
-    "impostorQuestionFR": "Quel type de climat te met de mauvaise humeur ?"
+    "impostorQuestionFR": "Quel type de climat te met de mauvaise humeur ?",
+    "impostorQuestionPT": "Que tipo de clima te deixa de mau humor?"
   },
   {
     "id": 46,
@@ -511,10 +603,12 @@
     "originalQuestionEN": "What would you do if you could travel in time?",
     "originalQuestionDE": "Was würdest du tun, wenn du durch die Zeit reisen könntest?",
     "originalQuestionFR": "Que ferais-tu si tu pouvais voyager dans le temps ?",
+    "originalQuestionPT": "O que você faria se pudesse viajar no tempo?",
     "impostorQuestionES": "¿A qué época no querrías viajar?",
     "impostorQuestionEN": "To which era would you not want to travel?",
     "impostorQuestionDE": "In welche Epoche würdest du nicht reisen wollen?",
-    "impostorQuestionFR": "À quelle époque ne voudrais-tu pas voyager ?"
+    "impostorQuestionFR": "À quelle époque ne voudrais-tu pas voyager ?",
+    "impostorQuestionPT": "Para qual época você não gostaria de viajar?"
   },
   {
     "id": 47,
@@ -522,10 +616,12 @@
     "originalQuestionEN": "What is your favorite drink?",
     "originalQuestionDE": "Was ist dein Lieblingsgetränk?",
     "originalQuestionFR": "Quelle est ta boisson préférée ?",
+    "originalQuestionPT": "Qual é a sua bebida favorita?",
     "impostorQuestionES": "¿Qué bebida no tomarías nunca?",
     "impostorQuestionEN": "Which drink would you never have?",
     "impostorQuestionDE": "Welches Getränk würdest du niemals trinken?",
-    "impostorQuestionFR": "Quelle boisson ne boirais-tu jamais ?"
+    "impostorQuestionFR": "Quelle boisson ne boirais-tu jamais ?",
+    "impostorQuestionPT": "Qual bebida você nunca tomaria?"
   },
   {
     "id": 48,
@@ -533,9 +629,11 @@
     "originalQuestionEN": "What would you do if you could swap bodies with someone for a day?",
     "originalQuestionDE": "Was würdest du tun, wenn du für einen Tag mit jemandem den Körper tauschen könntest?",
     "originalQuestionFR": "Que ferais-tu si tu pouvais échanger de corps avec quelqu'un pour une journée ?",
+    "originalQuestionPT": "O que você faria se pudesse trocar de corpo com alguém por um dia?",
     "impostorQuestionES": "¿Qué harías si nadie recordara quién eres?",
     "impostorQuestionEN": "What would you do if no one remembered who you are?",
     "impostorQuestionDE": "Was würdest du tun, wenn sich niemand mehr an dich erinnert?",
-    "impostorQuestionFR": "Que ferais-tu si personne ne se souvenait de qui tu es ?"
+    "impostorQuestionFR": "Que ferais-tu si personne ne se souvenait de qui tu es ?",
+    "impostorQuestionPT": "O que você faria se ninguém lembrasse quem você é?"
   }
 ]

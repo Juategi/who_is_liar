@@ -95,10 +95,12 @@ class QuestionDTO {
   String originalQuestionEN;
   String originalQuestionDE;
   String originalQuestionFR;
+  String originalQuestionPT;
   String impostorQuestionES;
   String impostorQuestionEN;
   String impostorQuestionDE;
   String impostorQuestionFR;
+  String impostorQuestionPT;
 
   QuestionDTO({
     required this.id,
@@ -110,6 +112,8 @@ class QuestionDTO {
     required this.impostorQuestionEN,
     required this.impostorQuestionDE,
     required this.impostorQuestionFR,
+    required this.originalQuestionPT,
+    required this.impostorQuestionPT,
   });
 
   factory QuestionDTO.fromJson(Map<String, dynamic> json) {
@@ -123,6 +127,8 @@ class QuestionDTO {
       impostorQuestionEN: json['impostorQuestionEN'] as String,
       impostorQuestionDE: json['impostorQuestionDE'] as String,
       impostorQuestionFR: json['impostorQuestionFR'] as String,
+      originalQuestionPT: json['originalQuestionPT'] as String,
+      impostorQuestionPT: json['impostorQuestionPT'] as String,
     );
   }
 }
@@ -155,6 +161,10 @@ class Question {
       case 'fr':
         originalQuestion = dto.originalQuestionFR;
         impostorQuestion = dto.impostorQuestionFR;
+        break;
+      case 'pt':
+        originalQuestion = dto.originalQuestionPT;
+        impostorQuestion = dto.impostorQuestionPT;
         break;
       default:
         originalQuestion = dto.originalQuestionEN;
