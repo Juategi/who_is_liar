@@ -37,7 +37,7 @@ class WaitingRoomScreen extends StatelessWidget {
                         content: Text('not_enough_players'.tr()),
                       ),
                     );
-                    //return;
+                    return;
                   }
                   gameRoomController.loadNextQuestion(state.code);
                 },

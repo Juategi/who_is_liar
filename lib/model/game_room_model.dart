@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:who_is_liar/controller/game_room/game_room.dart';
 import 'package:who_is_liar/model/name_model.dart';
 import 'package:who_is_liar/utils/code_utils.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'dart:math' as math;
 import 'package:http/http.dart' as http;
 
@@ -14,7 +16,7 @@ class GameRoomModel {
   List<Question> questions = [];
 
   GameRoomModel(this.database) {
-    _getQuestionsFromFile();
+    _getQuestionsFromStorage();
   }
 
   Future<String> createRoom() async {
@@ -60,7 +62,7 @@ class GameRoomModel {
   Future<void> loadNextQuestion(String code) async {
     // Load questions from a local JSON file
     if (questions.isEmpty) {
-      await _getQuestionsFromFile();
+      await _getQuestionsFromStorage();
     }
 
     // Retrieve the current question from the database
@@ -113,6 +115,37 @@ class GameRoomModel {
           'vote': '',
         });
       }
+    }
+  }
+
+  Future<void> _getQuestionsFromStorage() async {
+    try {
+      final storage = FirebaseStorage.instance;
+      final fileRef = storage.ref().child('questions.json');
+      final url = await fileRef.getDownloadURL();
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final content = response.body;
+        final List<dynamic> data = json.decode(content);
+        final List<Map<String, dynamic>> listOfMaps =
+            data.cast<Map<String, dynamic>>();
+        final formattedList = listOfMaps.map((map) {
+          return map.map((key, value) {
+            if (value is String) {
+              return MapEntry(key, value);
+            }
+            return MapEntry(key, value);
+          });
+        }).toList();
+        final List<QuestionDTO> questions =
+            formattedList.map((data) => QuestionDTO.fromJson(data)).toList();
+        this.questions = questions.map((dto) => Question.fromDTO(dto)).toList();
+      }
+    } catch (e) {
+      debugPrint('Error fetching questions from storage: $e');
+      // Handle error, maybe fallback to a local file or show an error message
+      await _getQuestionsFromFile();
     }
   }
 
